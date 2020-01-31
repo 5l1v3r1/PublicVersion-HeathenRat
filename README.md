@@ -12,9 +12,6 @@ What will be added ?
 * -Win32API (from the DLL I've created with many samples from microsoft and forums (ex : found a "trick" to lock keyboard)
 and Change Wallpaper is a Win32Api Function !
 * -If you have any ideas , make a pull request ! I don't promise I might not find a solution but I will try ! 
-
-
-
 * - will be updated soon : * - file manager (with letter drive and access to their files) and confirmation after deleting file
                            * - beta Native Functions (change brightness , gamma , delete file with win32 api , lock keyboard ( with a trick ) :) .....
 

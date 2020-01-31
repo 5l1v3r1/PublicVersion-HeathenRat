@@ -4,7 +4,14 @@ This rat works with tcp client and server ! I don't take any responsabilites for
 
 Currently in developement , be patient I work alone
 
+EDIT FROM 31-01-2020 22:16
 
+What will be added ? 
+
+* -TODO List
+* -Win32API (from the DLL I've created with many samples from microsoft and forums (ex : found a "trick" to lock keyboard)
+and Change Wallpaper is a Win32Api Function !
+* -If you have any ideas , make a pull request ! I don't promise I might not find a solution but I will try ! 
 
 
 All my friends are heathens , take it slow 

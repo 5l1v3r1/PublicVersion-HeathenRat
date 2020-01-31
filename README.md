@@ -56,6 +56,7 @@ TODO List :
 * -Others : 0 %
 * -Need to add event if connection is lost for client to server
 * -Options builder : 0 %
+* -persistence function if closed 
 
 
 I used src from https://www.youtube.com/watch?v=UWJja8Qp65Y&t and https://www.youtube.com/watch?v=UytjOcSHje8

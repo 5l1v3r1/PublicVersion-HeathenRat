@@ -1,4 +1,4 @@
-This rat works with tcp client and server ! I don't take any responsabilites for misusage of this Remote Access Tool , you're  responsible for your acts ! ! I used some different libraries (for example the Passwords Plugin) and all what I re-used in my code is linked in commentaries ! Simple but powerful !
+This rat works with tcp client and server ! I don't take any responsabilites for misusage of this Remote Access Tool , you're  responsible for your acts ! ! I used some different libraries (for example the Passwords Plugin) and all what I re-used in my code is linked in commentaries ! Simple but powerful !( I inspired by src from https://www.youtube.com/watch?v=UWJja8Qp65Y&t and https://www.youtube.com/watch?v=UytjOcSHje8 )
 
 
 
@@ -9,11 +9,13 @@ Currently in developement , be patient I work alone
 All my friends are heathens , take it slow 
 
 RBBRat = Stub 
+
 Client = GUI Server
 
 YOU NEED BUNIFU , XANDERUI 
 
-I used src from https://www.youtube.com/watch?v=UWJja8Qp65Y&t and https://www.youtube.com/watch?v=UytjOcSHje8
+
+
 
 
 What will be added next time ?
@@ -21,8 +23,6 @@ What will be added next time ?
 -download file and execute (computer and memory)
 -use File Manager to edit txt file and download file from victim
 -...
-
-
 
 
 

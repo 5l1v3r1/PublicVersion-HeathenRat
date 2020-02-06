@@ -30,22 +30,22 @@ What will be added next time ?
 
 LAST UPDATE FROM 06-02-2020 22:59 :
 
--added commands in command center (FM and disconnect)
--added some native functions ("block screen with invisble window" , "start random cursor postion" )
--added reconnect event if connection lost (client side) or server closed
--improved file manager
+* -added commands in command center (FM and disconnect)
+* -added some native functions ("block screen with invisble window" , "start random cursor postion" )
+* -added reconnect event if connection lost (client side) or server closed
+* -improved file manager
 
 
 
 LAST UPDATE 26-01-2020 20:31 :
 
--corrected bugs with file manager
--added funny audio + meme sounds
--command center improved
--minor bugs corrected
--added icons
--added commentaries and removed unnecessary commentaries
--removed some useless code for now
+* -corrected bugs with file manager
+* -added funny audio + meme sounds
+* -command center improved
+* -minor bugs corrected
+* -added icons
+* -added commentaries and removed unnecessary commentaries
+* -removed some useless code for now
 
 LAST UPDATE 25-01-20 20:55 :
 

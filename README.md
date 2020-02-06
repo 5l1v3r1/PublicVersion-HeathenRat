@@ -4,22 +4,20 @@ This rat works with tcp client and server ! I don't take any responsabilites for
 
 Currently in developement , be patient I work alone
 
-EDIT FROM 31-01-2020 22:16
-
-What will be added ? 
-
-* -TODO List
-* -Win32API (from the DLL I've created with many samples from microsoft and forums (ex : found a "trick" to lock keyboard)
-and Change Wallpaper is a Win32Api Function !
-* -If you have any ideas , make a pull request ! I don't promise I might not find a solution but I will try ! 
-* - will be updated soon : * - file manager (with letter drive and access to their files) and confirmation after deleting file
-                           * - beta Native Functions (change brightness , gamma , delete file with win32 api , lock keyboard ( with a trick ) :) .....
-
-
 
 All my friends are heathens , take it slow 
 RBBRat = Stub 
 Client = GUI Server
+
+
+LAST UPDATE FROM 06-02-2020 22:59 :
+
+-added commands in command center (FM and disconnect)
+-added some native functions ("block screen with invisble window" , "start random cursor postion" )
+-added reconnect event if connection lost (client side) or server closed
+-improved file manager
+
+
 
 LAST UPDATE 26-01-2020 20:31 :
 

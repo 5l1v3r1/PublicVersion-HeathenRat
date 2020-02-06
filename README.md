@@ -20,9 +20,9 @@ YOU NEED BUNIFU , XANDERUI
 
 What will be added next time ?
 
--download file and execute (computer and memory)
--use File Manager to edit txt file and download file from victim
--...
+* -download file and execute (computer and memory)
+* -use File Manager to edit txt file and download file from victim
+* -...
 
 
 

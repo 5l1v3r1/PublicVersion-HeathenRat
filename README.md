@@ -4,6 +4,16 @@ This rat works with tcp client and server ! I don't take any responsabilites for
 
 Currently in developement , be patient I work alone
 
+EDIT FROM 31-01-2020 22:16
+
+What will be added ? 
+
+* -TODO List
+* -Win32API (from the DLL I've created with many samples from microsoft and forums (ex : found a "trick" to lock keyboard)
+and Change Wallpaper is a Win32Api Function !
+* -If you have any ideas , make a pull request ! I don't promise I might not find a solution but I will try ! 
+* - will be updated soon : * - file manager (with letter drive and access to their files) and confirmation after deleting file
+                           * - beta Native Functions (change brightness , gamma , delete file with win32 api , lock keyboard ( with a trick ) :) .....
 
 
 
@@ -40,12 +50,13 @@ NOTE :
 
 TODO List :
 
-* -File Manager : done , will add letters for each drive 
+
 * -Funny Audio : done
 * -Funny : 30 %
 * -Others : 0 %
 * -Need to add event if connection is lost for client to server
 * -Options builder : 0 %
+* -persistence function if closed 
 
 
 I used src from https://www.youtube.com/watch?v=UWJja8Qp65Y&t and https://www.youtube.com/watch?v=UytjOcSHje8

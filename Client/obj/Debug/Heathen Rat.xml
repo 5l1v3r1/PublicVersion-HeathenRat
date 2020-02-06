@@ -52,6 +52,11 @@ Heathen Rat
   Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:Client.My.Resources.Resources.icons8_binarsdfy_file">
+<summary>
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:Client.My.Resources.Resources.icons8_broadcasFFQDFQting">
 <summary>
   Recherche une ressource localisée de type System.Drawing.Bitmap.
@@ -152,7 +157,22 @@ Heathen Rat
   Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:Client.My.Resources.Resources.icons8_sqdqsdice">
+<summary>
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Client.My.Resources.Resources.icons8_systezefm_report">
+<summary>
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:Client.My.Resources.Resources.icons8_troqsdqsdllface">
+<summary>
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Client.My.Resources.Resources.icons8_winzerzedows_xp">
 <summary>
   Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>

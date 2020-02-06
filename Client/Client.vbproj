@@ -53,6 +53,9 @@
   <PropertyGroup>
     <ApplicationIcon>icons8_joqsdker_dc.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == '6|AnyCPU'">
+    <OutputPath>bin\6\</OutputPath>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bunifu.UI.WinForms.BunifuButton">
       <HintPath>..\..\..\..\Desktop\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
@@ -245,6 +248,10 @@
   <ItemGroup>
     <Content Include="icons8_joqsdker_dc.ico" />
     <Content Include="icons8_spyqsqs.ico" />
+    <None Include="Resources\icons8_sqdqsdice.ico" />
+    <None Include="Resources\icons8_binarsdfy_file.ico" />
+    <None Include="Resources\icons8_systezefm_report.ico" />
+    <None Include="Resources\icons8_winzerzedows_xp.ico" />
     <None Include="Resources\icons8_info_zedzepopup.ico" />
     <None Include="Resources\icons8_info_zedzepopup_32.png" />
     <None Include="Resources\icons8_infoqsdqs_32.png" />

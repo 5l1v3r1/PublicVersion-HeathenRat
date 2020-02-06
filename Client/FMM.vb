@@ -6,18 +6,16 @@ Public Class FMM
         e.Graphics.FillRectangle(Brushes.GreenYellow, e.Bounds)
         e.DrawText()
     End Sub
-    Private Sub FMM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-    End Sub
 
     Private Sub GoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GoToolStripMenuItem.Click
 
         Dim theendpoint As String = Me.Text
 
-            Dim Folder As String = Label3.Text & "\"
+        Dim Folder As String = Label3.Text & "\"
 
-            '      Dim wheretogo As String = ListView1.SelectedItems(0).Text + "\" + "@wheretogo"
-            Dim wheretogo As String = ListView1.SelectedItems(0).Text + "@wheretogo"
+        '      Dim wheretogo As String = ListView1.SelectedItems(0).Text + "\" + "@wheretogo"
+        Dim wheretogo As String = ListView1.SelectedItems(0).Text + "@wheretogo"
 
             Dim AllToSend As String = Folder + wheretogo
 

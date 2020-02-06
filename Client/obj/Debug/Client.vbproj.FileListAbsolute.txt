@@ -17,7 +17,6 @@ C:\Users\mehdi\source\repos\RBBRat\Client\obj\Debug\Heathen Rat.exe
 C:\Users\mehdi\source\repos\RBBRat\Client\obj\Debug\Heathen Rat.xml
 C:\Users\mehdi\source\repos\RBBRat\Client\obj\Debug\Heathen Rat.pdb
 C:\Users\mehdi\source\repos\RBBRat\Client\obj\Debug\Client.ScreenForm.resources
-C:\Users\mehdi\source\repos\RBBRat\Client\obj\Debug\Client.vbprojAssemblyReference.cache
 C:\Users\mehdi\source\repos\RBBRat\Client\obj\Debug\Client.CREDITANDINFO.resources
 C:\Users\mehdi\source\repos\RBBRat\Client\obj\Debug\Client.TaskForm.resources
 C:\Users\mehdi\source\repos\RBBRat\Client\obj\Debug\Client.FileManagerTest.resources
@@ -25,3 +24,4 @@ C:\Users\mehdi\source\repos\RBBRat\Client\obj\Debug\Client.FMM.resources
 C:\Users\mehdi\source\repos\RBBRat\Client\obj\Debug\Client.Heathen.resources
 C:\Users\mehdi\source\repos\RBBRat\Client\obj\Debug\Client.DefaultSong.resources
 C:\Users\mehdi\source\repos\RBBRat\Client\obj\Debug\Client.InfoForm.resources
+C:\Users\mehdi\source\repos\RBBRat\Client\obj\Debug\Client.vbprojAssemblyReference.cache

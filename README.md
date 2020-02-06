@@ -49,15 +49,15 @@ LAST UPDATE 26-01-2020 20:31 :
 
 LAST UPDATE 25-01-20 20:55 :
 
--fixed bugs client not try to reconnect to server after those closes
--added screenlocker
--added screenshot
--added UDP Flood
--added change wallpaper 
--added taskmanager (can kill task actually don't use refresh feature it is broken for now)
--removed garbage dll and codes
--added commentaries to understand
--added src of DDOS plugin + PW plugins (the 2)
+* -fixed bugs client not try to reconnect to server after those closes
+* -added screenlocker
+* -added screenshot
+* -added UDP Flood
+* -added change wallpaper 
+* -added taskmanager (can kill task actually don't use refresh feature it is broken for now)
+* -removed garbage dll and codes
+* -added commentaries to understand
+* -added src of DDOS plugin + PW plugins (the 2)
 
 
 NOTE : 

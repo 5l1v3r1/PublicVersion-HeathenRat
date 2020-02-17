@@ -24,7 +24,7 @@ What will be added next time ?
 * -use File Manager to edit txt file and download file from victim
 * -...
 
-NOTE : Currently developing a derivative of this rat (like console) so the command center will not be often udapte in this version. Also the stub will be nearly the same in Console Rat (will release soon) and HeathenRat
+NOTE : Currently developing a derivative of this rat (like console) so the command center will not be often udapte in this version. Also the stub will be nearly the same in Console Rat (will release soon) and HeathenRat. Also searching for a good lib to make passwords stealer after this shitty chrome update.
 
 
 

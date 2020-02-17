@@ -30,6 +30,9 @@ Partial Class FMM
         Me.GoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BackToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DeleteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EncryptionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EncryptToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DecryptToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
@@ -63,9 +66,9 @@ Partial Class FMM
         '
         'ContextMenuStrip1
         '
-        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GoToolStripMenuItem, Me.BackToolStripMenuItem, Me.DeleteToolStripMenuItem})
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GoToolStripMenuItem, Me.BackToolStripMenuItem, Me.DeleteToolStripMenuItem, Me.EncryptionToolStripMenuItem})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(181, 92)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(181, 114)
         '
         'GoToolStripMenuItem
         '
@@ -90,6 +93,31 @@ Partial Class FMM
         Me.DeleteToolStripMenuItem.Name = "DeleteToolStripMenuItem"
         Me.DeleteToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.DeleteToolStripMenuItem.Text = "Delete"
+        '
+        'EncryptionToolStripMenuItem
+        '
+        Me.EncryptionToolStripMenuItem.BackColor = System.Drawing.Color.DarkViolet
+        Me.EncryptionToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EncryptToolStripMenuItem, Me.DecryptToolStripMenuItem})
+        Me.EncryptionToolStripMenuItem.Image = Global.Client.My.Resources.Resources.iconsqsdqs8_skull1
+        Me.EncryptionToolStripMenuItem.Name = "EncryptionToolStripMenuItem"
+        Me.EncryptionToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.EncryptionToolStripMenuItem.Text = "Encryption XXTea"
+        '
+        'EncryptToolStripMenuItem
+        '
+        Me.EncryptToolStripMenuItem.BackColor = System.Drawing.Color.DarkViolet
+        Me.EncryptToolStripMenuItem.Image = Global.Client.My.Resources.Resources.icons8_lockqsdqsd_32
+        Me.EncryptToolStripMenuItem.Name = "EncryptToolStripMenuItem"
+        Me.EncryptToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.EncryptToolStripMenuItem.Text = "Encrypt"
+        '
+        'DecryptToolStripMenuItem
+        '
+        Me.DecryptToolStripMenuItem.BackColor = System.Drawing.Color.DarkViolet
+        Me.DecryptToolStripMenuItem.Image = Global.Client.My.Resources.Resources.icons8_adazdsqunlock_32
+        Me.DecryptToolStripMenuItem.Name = "DecryptToolStripMenuItem"
+        Me.DecryptToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.DecryptToolStripMenuItem.Text = "Decrypt"
         '
         'Label3
         '
@@ -202,4 +230,7 @@ Partial Class FMM
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label4 As Label
     Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents EncryptionToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EncryptToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents DecryptToolStripMenuItem As ToolStripMenuItem
 End Class

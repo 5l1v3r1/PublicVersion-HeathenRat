@@ -34,6 +34,7 @@ LAST UPDATE FROM  19-02-2020 21:32 :
 * -Small changes with the UI
 * -Added dependencies in a folder with same name 
 * -Added SwapMouse Buttons Functions
+* -Added DoubleClic event in File Manager to go on in folders
 
 LAST UPDATE FROM 17-02-2020 22:42 :
 

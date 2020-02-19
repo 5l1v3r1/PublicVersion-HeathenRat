@@ -35,6 +35,7 @@ LAST UPDATE FROM  19-02-2020 21:32 :
 * -Added dependencies in a folder with same name 
 * -Added SwapMouse Buttons Functions
 * -Added DoubleClic event in File Manager to go on in folders
+* -Clear Ram after using plugin 
 
 LAST UPDATE FROM 17-02-2020 22:42 :
 

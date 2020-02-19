@@ -21,8 +21,8 @@ YOU NEED BUNIFU , XANDERUI
 What will be added next time ?
 
 * -download file and execute (computer and memory)
-* -use File Manager to edit txt file and download file from victim
-* -...
+* -...more more and more
+* -also the stub and the code is going be optimized when the project will be ended.(Plugins will be separeted in DLL like DDOS Plugin)
 
 NOTE : Currently developing a derivative of this rat (like console) so the command center will not be often udapte in this version. Also the stub will be nearly the same in Console Rat (will release soon) and HeathenRat. Also searching for a good lib to make passwords stealer after this shitty chrome update.
 

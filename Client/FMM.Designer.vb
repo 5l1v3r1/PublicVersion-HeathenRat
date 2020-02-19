@@ -33,6 +33,8 @@ Partial Class FMM
         Me.EncryptionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EncryptToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DecryptToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DownloadThisFileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.UploadAFileOnComputerVictimToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
@@ -40,6 +42,7 @@ Partial Class FMM
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.OpenFileDial1 = New System.Windows.Forms.OpenFileDialog()
         Me.ContextMenuStrip1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -66,16 +69,16 @@ Partial Class FMM
         '
         'ContextMenuStrip1
         '
-        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GoToolStripMenuItem, Me.BackToolStripMenuItem, Me.DeleteToolStripMenuItem, Me.EncryptionToolStripMenuItem})
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GoToolStripMenuItem, Me.BackToolStripMenuItem, Me.DeleteToolStripMenuItem, Me.EncryptionToolStripMenuItem, Me.DownloadThisFileToolStripMenuItem, Me.UploadAFileOnComputerVictimToolStripMenuItem})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(181, 114)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(249, 158)
         '
         'GoToolStripMenuItem
         '
         Me.GoToolStripMenuItem.BackColor = System.Drawing.Color.DarkViolet
         Me.GoToolStripMenuItem.Image = Global.Client.My.Resources.Resources.icons8_nextazd
         Me.GoToolStripMenuItem.Name = "GoToolStripMenuItem"
-        Me.GoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.GoToolStripMenuItem.Size = New System.Drawing.Size(248, 22)
         Me.GoToolStripMenuItem.Text = "Go"
         '
         'BackToolStripMenuItem
@@ -83,7 +86,7 @@ Partial Class FMM
         Me.BackToolStripMenuItem.BackColor = System.Drawing.Color.DarkViolet
         Me.BackToolStripMenuItem.Image = Global.Client.My.Resources.Resources.icons8_previousqdqs
         Me.BackToolStripMenuItem.Name = "BackToolStripMenuItem"
-        Me.BackToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.BackToolStripMenuItem.Size = New System.Drawing.Size(248, 22)
         Me.BackToolStripMenuItem.Text = "Back"
         '
         'DeleteToolStripMenuItem
@@ -91,7 +94,7 @@ Partial Class FMM
         Me.DeleteToolStripMenuItem.BackColor = System.Drawing.Color.DarkViolet
         Me.DeleteToolStripMenuItem.Image = Global.Client.My.Resources.Resources.icons8_delete_biqsdqsn
         Me.DeleteToolStripMenuItem.Name = "DeleteToolStripMenuItem"
-        Me.DeleteToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.DeleteToolStripMenuItem.Size = New System.Drawing.Size(248, 22)
         Me.DeleteToolStripMenuItem.Text = "Delete"
         '
         'EncryptionToolStripMenuItem
@@ -100,7 +103,7 @@ Partial Class FMM
         Me.EncryptionToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EncryptToolStripMenuItem, Me.DecryptToolStripMenuItem})
         Me.EncryptionToolStripMenuItem.Image = Global.Client.My.Resources.Resources.iconsqsdqs8_skull1
         Me.EncryptionToolStripMenuItem.Name = "EncryptionToolStripMenuItem"
-        Me.EncryptionToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.EncryptionToolStripMenuItem.Size = New System.Drawing.Size(248, 22)
         Me.EncryptionToolStripMenuItem.Text = "Encryption XXTea"
         '
         'EncryptToolStripMenuItem
@@ -108,7 +111,7 @@ Partial Class FMM
         Me.EncryptToolStripMenuItem.BackColor = System.Drawing.Color.DarkViolet
         Me.EncryptToolStripMenuItem.Image = Global.Client.My.Resources.Resources.icons8_lockqsdqsd_32
         Me.EncryptToolStripMenuItem.Name = "EncryptToolStripMenuItem"
-        Me.EncryptToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.EncryptToolStripMenuItem.Size = New System.Drawing.Size(115, 22)
         Me.EncryptToolStripMenuItem.Text = "Encrypt"
         '
         'DecryptToolStripMenuItem
@@ -116,8 +119,24 @@ Partial Class FMM
         Me.DecryptToolStripMenuItem.BackColor = System.Drawing.Color.DarkViolet
         Me.DecryptToolStripMenuItem.Image = Global.Client.My.Resources.Resources.icons8_adazdsqunlock_32
         Me.DecryptToolStripMenuItem.Name = "DecryptToolStripMenuItem"
-        Me.DecryptToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.DecryptToolStripMenuItem.Size = New System.Drawing.Size(115, 22)
         Me.DecryptToolStripMenuItem.Text = "Decrypt"
+        '
+        'DownloadThisFileToolStripMenuItem
+        '
+        Me.DownloadThisFileToolStripMenuItem.BackColor = System.Drawing.Color.DarkViolet
+        Me.DownloadThisFileToolStripMenuItem.Image = Global.Client.My.Resources.Resources.icons8_software_installer_32
+        Me.DownloadThisFileToolStripMenuItem.Name = "DownloadThisFileToolStripMenuItem"
+        Me.DownloadThisFileToolStripMenuItem.Size = New System.Drawing.Size(248, 22)
+        Me.DownloadThisFileToolStripMenuItem.Text = "Download this file"
+        '
+        'UploadAFileOnComputerVictimToolStripMenuItem
+        '
+        Me.UploadAFileOnComputerVictimToolStripMenuItem.BackColor = System.Drawing.Color.DarkViolet
+        Me.UploadAFileOnComputerVictimToolStripMenuItem.Image = Global.Client.My.Resources.Resources.icons8_upload_32
+        Me.UploadAFileOnComputerVictimToolStripMenuItem.Name = "UploadAFileOnComputerVictimToolStripMenuItem"
+        Me.UploadAFileOnComputerVictimToolStripMenuItem.Size = New System.Drawing.Size(248, 22)
+        Me.UploadAFileOnComputerVictimToolStripMenuItem.Text = "Upload a file on computer victim"
         '
         'Label3
         '
@@ -190,6 +209,10 @@ Partial Class FMM
         Me.ComboBox1.Size = New System.Drawing.Size(143, 21)
         Me.ComboBox1.TabIndex = 15
         '
+        'OpenFileDial1
+        '
+        Me.OpenFileDial1.FileName = "Upload File"
+        '
         'FMM
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -233,4 +256,7 @@ Partial Class FMM
     Friend WithEvents EncryptionToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EncryptToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DecryptToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents DownloadThisFileToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents UploadAFileOnComputerVictimToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents OpenFileDial1 As OpenFileDialog
 End Class

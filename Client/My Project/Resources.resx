@@ -121,6 +121,9 @@
   <data name="icons8_monitodzedr" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_monitodzedr.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8_upload_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_upload_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8_nextazd" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_nextazd.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -170,17 +173,29 @@ End Module</value>
   <data name="icons8_codeazdazd_file" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_codeazdazd_file.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8_broadcasFFQDFQting" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_broadcasFFQDFQting.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8_systezefm_report" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_systezefm_report.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8_workstqsdation" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_workstqsdation.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8_troqsdqsdllface" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_troqsdqsdllface.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_imaqsdqsdge_file" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_imaqsdqsdge_file.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_infoqsdqs_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_infoqsdqs_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_winzerzedows_xp" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_winzerzedows_xp.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_switch_qsdqsdon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_switch_qsdqsdon.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_locssk" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_locssk.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -206,8 +221,8 @@ End Module</value>
   <data name="monitor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\monitor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconsqsdqs8_skull1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconsqsdqs8_skull1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_joqsdker_dc_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_joqsdker_dc_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_previousqdqs" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_previousqdqs.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -227,23 +242,26 @@ End Module</value>
   <data name="imageres_15" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imageres_15.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_broadcasFFQDFQting" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_broadcasFFQDFQting.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="shell32_240" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shell32_240.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="imageres_5377" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imageres_5377.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8_center_of_gravqsdqsdity_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_center_of_gravqsdqsdity_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8_padqsdzadlock" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_padqsdzadlock.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_back_aqsdqsrrow_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_back_aqsdqsrrow_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="iconsqsdqs8_skull1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconsqsdqs8_skull1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_code" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_code.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_imaqsdqsdge_file" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_imaqsdqsdge_file.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_azdazsystem_task" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_azdazsystem_task.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_filled_message" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_filled_message.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -254,11 +272,17 @@ End Module</value>
   <data name="icons8_forwqsdard_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_forwqsdard_button.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8_refrsdsesh" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_refrsdsesh.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Dakirby309-Simply-Styled-Default-Programs (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Dakirby309-Simply-Styled-Default-Programs (1).ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_azdazsystem_task" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_azdazsystem_task.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_back_aqsdqsrrow_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_back_aqsdqsrrow_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_lockqsdqsd_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_lockqsdqsd_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Res" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Res.exe;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -266,13 +290,13 @@ End Module</value>
   <data name="icons8_sqdqsdice" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_sqdqsdice.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_workstqsdation" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_workstqsdation.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_software_installer_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_software_installer_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="imageres_1004" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imageres_1004.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_lockqsdqsd_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_lockqsdqsd_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_switch_oqsdqsdn_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_switch_oqsdqsdn_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

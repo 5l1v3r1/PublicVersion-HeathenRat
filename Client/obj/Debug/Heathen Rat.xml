@@ -67,6 +67,11 @@ Heathen Rat
   Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:Client.My.Resources.Resources.icons8_center_of_gravqsdqsdity_32">
+<summary>
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:Client.My.Resources.Resources.icons8_code">
 <summary>
   Recherche une ressource localisée de type System.Drawing.Bitmap.
@@ -127,6 +132,11 @@ Heathen Rat
   Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:Client.My.Resources.Resources.icons8_joqsdker_dc_32">
+<summary>
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:Client.My.Resources.Resources.icons8_joqsdker_suicide_squad_32">
 <summary>
   Recherche une ressource localisée de type System.Drawing.Bitmap.
@@ -177,7 +187,27 @@ Heathen Rat
   Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:Client.My.Resources.Resources.icons8_refrsdsesh">
+<summary>
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Client.My.Resources.Resources.icons8_software_installer_32">
+<summary>
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:Client.My.Resources.Resources.icons8_sqdqsdice">
+<summary>
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Client.My.Resources.Resources.icons8_switch_oqsdqsdn_32">
+<summary>
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Client.My.Resources.Resources.icons8_switch_qsdqsdon">
 <summary>
   Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>
@@ -188,6 +218,11 @@ Heathen Rat
 </summary>
 </member>
 <member name="P:Client.My.Resources.Resources.icons8_troqsdqsdllface">
+<summary>
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Client.My.Resources.Resources.icons8_upload_32">
 <summary>
   Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>
@@ -269,6 +304,11 @@ Imports System.Reflection
 Module X
     Sub Main()
     	MessageBox.Show(&quot;&quot;, &quot;&quot;, MessageBoxButtons.OK, MessageBoxIco [le reste de la chaîne a été tronqué]&quot;;.
+</summary>
+</member>
+<member name="P:Client.My.Resources.Resources.shell32_240">
+<summary>
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>
 </member>
 </members>

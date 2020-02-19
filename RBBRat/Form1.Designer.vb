@@ -48,7 +48,7 @@ Partial Class Form1
         '
         'Timer1
         '
-        Me.Timer1.Interval = 5000
+        Me.Timer1.Interval = 2500
         '
         'PictureBox1
         '
@@ -87,7 +87,7 @@ Partial Class Form1
         '
         'Timer2
         '
-        Me.Timer2.Interval = 6000
+        Me.Timer2.Interval = 3000
         '
         'Form1
         '

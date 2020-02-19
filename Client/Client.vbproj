@@ -249,6 +249,14 @@
   <ItemGroup>
     <Content Include="icons8_joqsdker_dc.ico" />
     <Content Include="icons8_spyqsqs.ico" />
+    <None Include="Resources\icons8_switch_oqsdqsdn_32.png" />
+    <None Include="Resources\icons8_switch_qsdqsdon.ico" />
+    <None Include="Resources\icons8_refrsdsesh.ico" />
+    <None Include="Resources\icons8_center_of_gravqsdqsdity_32.png" />
+    <None Include="Resources\shell32_240.ico" />
+    <None Include="Resources\icons8_joqsdker_dc_32.png" />
+    <None Include="Resources\icons8_software_installer_32.png" />
+    <None Include="Resources\icons8_upload_32.png" />
     <None Include="Resources\icons8_lockqsdqsd_32.png" />
     <None Include="Resources\icons8_adazdsqunlock_32.png" />
     <None Include="Resources\icons8_padqsdzadlock.ico" />

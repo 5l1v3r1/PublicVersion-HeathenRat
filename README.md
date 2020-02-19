@@ -37,6 +37,27 @@ LAST UPDATE FROM  19-02-2020 21:32 :
 * -Added DoubleClic event in File Manager to go on in folders
 * -Clear Ram after using plugin 
 
+Use this code to clear Ram : 
+  ''Come from : https://www.youtube.com/watch?v=-fPY7ecWPUA
+    ''Reset Cache Memory
+    Declare Function SetProcessWorkingSetSize Lib "kernel32.dll" (ByVal process As IntPtr, ByVal minimumWorkingSetSize As Integer, ByVal maximumWorkingSetSize As Integer) As Integer
+    Public Sub FlushMemory()
+        Try
+            GC.Collect()
+            GC.WaitForPendingFinalizers()
+            If (Environment.OSVersion.Platform = PlatformID.Win32NT) Then
+                SetProcessWorkingSetSize(Process.GetCurrentProcess().Handle, -1, -1)
+                Dim myProcesses As Process() = Process.GetProcessesByName("ApplicationName")
+                Dim myProcess As Process
+                'Dim ProcessInfo As Process
+                For Each myProcess In myProcesses
+                    SetProcessWorkingSetSize(myProcess.Handle, -1, -1)
+                Next myProcess
+            End If
+        Catch ex As Exception
+        End Try
+    End Sub
+
 LAST UPDATE FROM 17-02-2020 22:42 :
 
 * -Client try to reconnect to server until they can (reconnect event)

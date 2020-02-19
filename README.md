@@ -33,6 +33,7 @@ LAST UPDATE FROM  19-02-2020 21:32 :
 * -Improved reconnect event (known minor bugs)
 * -Small changes with the UI
 * -Added dependencies in a folder with same name 
+* -Added SwapMouse Buttons Functions
 
 LAST UPDATE FROM 17-02-2020 22:42 :
 

@@ -35,6 +35,7 @@ LAST UPDATE FROM  24-02-2020 19:02 :
 * -removed txt files after they have been used 
 * -improved stub
 * -minor changes in UI
+* -added notification tray
 
 LAST UPDATE FROM  19-02-2020 21:32 :
 

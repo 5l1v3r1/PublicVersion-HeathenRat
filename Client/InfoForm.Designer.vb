@@ -32,9 +32,9 @@ Partial Class InfoForm
         '
         Me.RichTextBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(10, Byte), Integer), CType(CType(10, Byte), Integer), CType(CType(56, Byte), Integer))
         Me.RichTextBox1.ForeColor = System.Drawing.Color.Lime
-        Me.RichTextBox1.Location = New System.Drawing.Point(6, 90)
+        Me.RichTextBox1.Location = New System.Drawing.Point(6, 19)
         Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(764, 330)
+        Me.RichTextBox1.Size = New System.Drawing.Size(764, 401)
         Me.RichTextBox1.TabIndex = 0
         Me.RichTextBox1.Text = ""
         '

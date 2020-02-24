@@ -249,6 +249,11 @@
   <ItemGroup>
     <Content Include="icons8_joqsdker_dc.ico" />
     <Content Include="icons8_spyqsqs.ico" />
+    <None Include="Resources\icons8_software_installer_321.png" />
+    <None Include="Resources\imageres_1302.ico" />
+    <None Include="Resources\imageres_5303.ico" />
+    <None Include="Resources\icons8_File_qsqsqxplorer_32.png" />
+    <None Include="Resources\icons8_memssqory_slot_32.png" />
     <None Include="Resources\icons8_switch_oqsdqsdn_32.png" />
     <None Include="Resources\icons8_switch_qsdqsdon.ico" />
     <None Include="Resources\icons8_refrsdsesh.ico" />

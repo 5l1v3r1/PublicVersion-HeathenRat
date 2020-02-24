@@ -284,7 +284,7 @@ Public Class FMM
                 Dim theendpoint As String = Me.Text
                 Dim EndName As String() = Split(OpenFileDial1.FileName, "\")
 
-                MessageBox.Show(EndName(EndName.Length - 1))
+
                 '      Dim wheretogo As String = ListView1.SelectedItems(0).Text + "\" + "@wheretogo"
                 Dim wheretowriteIT As String = "\\\UploadThereSir///" + ListView1.SelectedItems(0).Text + "\" + EndName(EndName.Length - 1)
 

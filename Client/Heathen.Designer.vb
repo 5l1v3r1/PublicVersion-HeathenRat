@@ -24,15 +24,15 @@ Partial Class Heathen
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Heathen))
-        Dim BorderEdges4 As Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges = New Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges()
-        Dim StateProperties7 As Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties = New Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties()
-        Dim StateProperties8 As Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties = New Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties()
-        Dim BorderEdges5 As Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges = New Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges()
-        Dim StateProperties9 As Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties = New Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties()
-        Dim StateProperties10 As Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties = New Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties()
-        Dim BorderEdges6 As Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges = New Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges()
-        Dim StateProperties11 As Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties = New Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties()
-        Dim StateProperties12 As Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties = New Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties()
+        Dim BorderEdges16 As Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges = New Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges()
+        Dim StateProperties31 As Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties = New Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties()
+        Dim StateProperties32 As Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties = New Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties()
+        Dim BorderEdges17 As Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges = New Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges()
+        Dim StateProperties33 As Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties = New Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties()
+        Dim StateProperties34 As Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties = New Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties()
+        Dim BorderEdges18 As Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges = New Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges()
+        Dim StateProperties35 As Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties = New Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties()
+        Dim StateProperties36 As Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties = New Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.TextPort = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -55,6 +55,13 @@ Partial Class Heathen
         Me.PasswordStealerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Method1ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Method2ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DownloadAndExecuteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FromFileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FromDirectDownloadLinkToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FromFileComputerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.InMemoryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FromLinkToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FromFileToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.FunnyToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PlayAudioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DefaultSongToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -105,6 +112,11 @@ Partial Class Heathen
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.FileDial = New System.Windows.Forms.OpenFileDialog()
+        Me.XuiSplashScreen1 = New XanderUI.XUISplashScreen()
+        Me.XuiObjectAnimator1 = New XanderUI.XUIObjectAnimator()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.XuiCustomGroupbox1.SuspendLayout()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ContextMenuStrip1.SuspendLayout()
@@ -140,6 +152,8 @@ Partial Class Heathen
         '
         'TextPort
         '
+        Me.TextPort.BackColor = System.Drawing.Color.FromArgb(CType(CType(10, Byte), Integer), CType(CType(10, Byte), Integer), CType(CType(56, Byte), Integer))
+        Me.TextPort.ForeColor = System.Drawing.Color.White
         Me.TextPort.Location = New System.Drawing.Point(47, 17)
         Me.TextPort.Multiline = True
         Me.TextPort.Name = "TextPort"
@@ -208,16 +222,16 @@ Partial Class Heathen
         '
         'ContextMenuStrip1
         '
-        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MessageToolStripMenuItem, Me.DeskopToolStripMenuItem, Me.DDOSToolStripMenuItem, Me.PasswordStealerToolStripMenuItem, Me.FunnyToolStripMenuItem, Me.NatveFunctionToolStripMenuItem, Me.DisconnectToolStripMenuItem})
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MessageToolStripMenuItem, Me.DeskopToolStripMenuItem, Me.DDOSToolStripMenuItem, Me.PasswordStealerToolStripMenuItem, Me.DownloadAndExecuteToolStripMenuItem, Me.FunnyToolStripMenuItem, Me.NatveFunctionToolStripMenuItem, Me.DisconnectToolStripMenuItem})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(163, 158)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(198, 180)
         '
         'MessageToolStripMenuItem
         '
         Me.MessageToolStripMenuItem.BackColor = System.Drawing.Color.DarkViolet
         Me.MessageToolStripMenuItem.Image = Global.Client.My.Resources.Resources.icons8_filled_message
         Me.MessageToolStripMenuItem.Name = "MessageToolStripMenuItem"
-        Me.MessageToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
+        Me.MessageToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
         Me.MessageToolStripMenuItem.Text = "Message"
         '
         'DeskopToolStripMenuItem
@@ -226,7 +240,7 @@ Partial Class Heathen
         Me.DeskopToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TakeScreenShotToolStripMenuItem, Me.SetWallpaperToolStripMenuItem, Me.TaskManagerToolStripMenuItem, Me.ScreenLockerToolStripMenuItem, Me.FileManagerToolStripMenuItem, Me.GetInformationToolStripMenuItem})
         Me.DeskopToolStripMenuItem.Image = Global.Client.My.Resources.Resources.icons8_workstqsdation
         Me.DeskopToolStripMenuItem.Name = "DeskopToolStripMenuItem"
-        Me.DeskopToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
+        Me.DeskopToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
         Me.DeskopToolStripMenuItem.Text = "Deskop"
         '
         'TakeScreenShotToolStripMenuItem
@@ -283,7 +297,7 @@ Partial Class Heathen
         Me.DDOSToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UDPToolStripMenuItem})
         Me.DDOSToolStripMenuItem.Image = Global.Client.My.Resources.Resources.icons8_broadcasFFQDFQting
         Me.DDOSToolStripMenuItem.Name = "DDOSToolStripMenuItem"
-        Me.DDOSToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
+        Me.DDOSToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
         Me.DDOSToolStripMenuItem.Text = "DDOS"
         '
         'UDPToolStripMenuItem
@@ -300,7 +314,7 @@ Partial Class Heathen
         Me.PasswordStealerToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Method1ToolStripMenuItem, Me.Method2ToolStripMenuItem})
         Me.PasswordStealerToolStripMenuItem.Image = Global.Client.My.Resources.Resources.icons8_key_2qsdqs
         Me.PasswordStealerToolStripMenuItem.Name = "PasswordStealerToolStripMenuItem"
-        Me.PasswordStealerToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
+        Me.PasswordStealerToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
         Me.PasswordStealerToolStripMenuItem.Text = "Password Stealer"
         '
         'Method1ToolStripMenuItem
@@ -319,13 +333,72 @@ Partial Class Heathen
         Me.Method2ToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
         Me.Method2ToolStripMenuItem.Text = "Method 2"
         '
+        'DownloadAndExecuteToolStripMenuItem
+        '
+        Me.DownloadAndExecuteToolStripMenuItem.BackColor = System.Drawing.Color.DarkViolet
+        Me.DownloadAndExecuteToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FromFileToolStripMenuItem, Me.InMemoryToolStripMenuItem})
+        Me.DownloadAndExecuteToolStripMenuItem.Image = Global.Client.My.Resources.Resources.icons8_software_installer_321
+        Me.DownloadAndExecuteToolStripMenuItem.Name = "DownloadAndExecuteToolStripMenuItem"
+        Me.DownloadAndExecuteToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
+        Me.DownloadAndExecuteToolStripMenuItem.Text = "Download And Execute"
+        '
+        'FromFileToolStripMenuItem
+        '
+        Me.FromFileToolStripMenuItem.BackColor = System.Drawing.Color.DarkViolet
+        Me.FromFileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FromDirectDownloadLinkToolStripMenuItem, Me.FromFileComputerToolStripMenuItem})
+        Me.FromFileToolStripMenuItem.Image = Global.Client.My.Resources.Resources.icons8_File_qsqsqxplorer_32
+        Me.FromFileToolStripMenuItem.Name = "FromFileToolStripMenuItem"
+        Me.FromFileToolStripMenuItem.Size = New System.Drawing.Size(166, 22)
+        Me.FromFileToolStripMenuItem.Text = "From File DONE"
+        '
+        'FromDirectDownloadLinkToolStripMenuItem
+        '
+        Me.FromDirectDownloadLinkToolStripMenuItem.BackColor = System.Drawing.Color.DarkViolet
+        Me.FromDirectDownloadLinkToolStripMenuItem.Image = Global.Client.My.Resources.Resources.imageres_5303
+        Me.FromDirectDownloadLinkToolStripMenuItem.Name = "FromDirectDownloadLinkToolStripMenuItem"
+        Me.FromDirectDownloadLinkToolStripMenuItem.Size = New System.Drawing.Size(218, 22)
+        Me.FromDirectDownloadLinkToolStripMenuItem.Text = "From Direct Download Link"
+        '
+        'FromFileComputerToolStripMenuItem
+        '
+        Me.FromFileComputerToolStripMenuItem.BackColor = System.Drawing.Color.DarkViolet
+        Me.FromFileComputerToolStripMenuItem.Image = Global.Client.My.Resources.Resources.imageres_1302
+        Me.FromFileComputerToolStripMenuItem.Name = "FromFileComputerToolStripMenuItem"
+        Me.FromFileComputerToolStripMenuItem.Size = New System.Drawing.Size(218, 22)
+        Me.FromFileComputerToolStripMenuItem.Text = "From File Computer"
+        '
+        'InMemoryToolStripMenuItem
+        '
+        Me.InMemoryToolStripMenuItem.BackColor = System.Drawing.Color.DarkViolet
+        Me.InMemoryToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FromLinkToolStripMenuItem, Me.FromFileToolStripMenuItem1})
+        Me.InMemoryToolStripMenuItem.Image = Global.Client.My.Resources.Resources.icons8_memssqory_slot_32
+        Me.InMemoryToolStripMenuItem.Name = "InMemoryToolStripMenuItem"
+        Me.InMemoryToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.InMemoryToolStripMenuItem.Text = "In Memory"
+        '
+        'FromLinkToolStripMenuItem
+        '
+        Me.FromLinkToolStripMenuItem.BackColor = System.Drawing.Color.DarkViolet
+        Me.FromLinkToolStripMenuItem.Image = Global.Client.My.Resources.Resources.imageres_5303
+        Me.FromLinkToolStripMenuItem.Name = "FromLinkToolStripMenuItem"
+        Me.FromLinkToolStripMenuItem.Size = New System.Drawing.Size(252, 22)
+        Me.FromLinkToolStripMenuItem.Text = "From Direct Download Link TODO"
+        '
+        'FromFileToolStripMenuItem1
+        '
+        Me.FromFileToolStripMenuItem1.BackColor = System.Drawing.Color.DarkViolet
+        Me.FromFileToolStripMenuItem1.Image = Global.Client.My.Resources.Resources.imageres_1302
+        Me.FromFileToolStripMenuItem1.Name = "FromFileToolStripMenuItem1"
+        Me.FromFileToolStripMenuItem1.Size = New System.Drawing.Size(218, 22)
+        Me.FromFileToolStripMenuItem1.Text = "From File Computer"
+        '
         'FunnyToolStripMenuItem
         '
         Me.FunnyToolStripMenuItem.BackColor = System.Drawing.Color.DarkViolet
         Me.FunnyToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PlayAudioToolStripMenuItem})
         Me.FunnyToolStripMenuItem.Image = Global.Client.My.Resources.Resources.icons8_coqsdqsdedy
         Me.FunnyToolStripMenuItem.Name = "FunnyToolStripMenuItem"
-        Me.FunnyToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
+        Me.FunnyToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
         Me.FunnyToolStripMenuItem.Text = "Funny"
         '
         'PlayAudioToolStripMenuItem
@@ -359,7 +432,7 @@ Partial Class Heathen
         Me.NatveFunctionToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BlockScreenInvisibleToolStripMenuItem, Me.LaunchBinaryVirusToolStripMenuItem, Me.StartRandomCursorPositionToolStripMenuItem, Me.SwapMouseButtonToolStripMenuItem})
         Me.NatveFunctionToolStripMenuItem.Image = Global.Client.My.Resources.Resources.icons8_winzerzedows_xp
         Me.NatveFunctionToolStripMenuItem.Name = "NatveFunctionToolStripMenuItem"
-        Me.NatveFunctionToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
+        Me.NatveFunctionToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
         Me.NatveFunctionToolStripMenuItem.Text = "Native Function"
         '
         'BlockScreenInvisibleToolStripMenuItem
@@ -400,7 +473,7 @@ Partial Class Heathen
         Me.OnToolStripMenuItem.BackColor = System.Drawing.Color.DarkViolet
         Me.OnToolStripMenuItem.Image = Global.Client.My.Resources.Resources.icons8_switch_qsdqsdon
         Me.OnToolStripMenuItem.Name = "OnToolStripMenuItem"
-        Me.OnToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.OnToolStripMenuItem.Size = New System.Drawing.Size(91, 22)
         Me.OnToolStripMenuItem.Text = "On"
         '
         'OffToolStripMenuItem
@@ -408,7 +481,7 @@ Partial Class Heathen
         Me.OffToolStripMenuItem.BackColor = System.Drawing.Color.DarkViolet
         Me.OffToolStripMenuItem.Image = Global.Client.My.Resources.Resources.icons8_switch_oqsdqsdn_32
         Me.OffToolStripMenuItem.Name = "OffToolStripMenuItem"
-        Me.OffToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.OffToolStripMenuItem.Size = New System.Drawing.Size(91, 22)
         Me.OffToolStripMenuItem.Text = "Off"
         '
         'DisconnectToolStripMenuItem
@@ -416,7 +489,7 @@ Partial Class Heathen
         Me.DisconnectToolStripMenuItem.BackColor = System.Drawing.Color.DarkViolet
         Me.DisconnectToolStripMenuItem.Image = Global.Client.My.Resources.Resources.icons8_export
         Me.DisconnectToolStripMenuItem.Name = "DisconnectToolStripMenuItem"
-        Me.DisconnectToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
+        Me.DisconnectToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
         Me.DisconnectToolStripMenuItem.Text = "Disconnect"
         '
         'XuiFlatTab1
@@ -508,11 +581,11 @@ Partial Class Heathen
         Me.BunifuButton1.ColorContrastOnClick = 45
         Me.BunifuButton1.ColorContrastOnHover = 45
         Me.BunifuButton1.Cursor = System.Windows.Forms.Cursors.Hand
-        BorderEdges4.BottomLeft = True
-        BorderEdges4.BottomRight = True
-        BorderEdges4.TopLeft = True
-        BorderEdges4.TopRight = True
-        Me.BunifuButton1.CustomizableEdges = BorderEdges4
+        BorderEdges16.BottomLeft = True
+        BorderEdges16.BottomRight = True
+        BorderEdges16.TopLeft = True
+        BorderEdges16.TopRight = True
+        Me.BunifuButton1.CustomizableEdges = BorderEdges16
         Me.BunifuButton1.DialogResult = System.Windows.Forms.DialogResult.None
         Me.BunifuButton1.DisabledBorderColor = System.Drawing.Color.Empty
         Me.BunifuButton1.DisabledFillColor = System.Drawing.Color.FromArgb(CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer))
@@ -533,24 +606,24 @@ Partial Class Heathen
         Me.BunifuButton1.IndicateFocus = False
         Me.BunifuButton1.Location = New System.Drawing.Point(1116, 464)
         Me.BunifuButton1.Name = "BunifuButton1"
-        StateProperties7.BorderColor = System.Drawing.Color.Silver
-        StateProperties7.BorderRadius = 3
-        StateProperties7.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid
-        StateProperties7.BorderThickness = 1
-        StateProperties7.FillColor = System.Drawing.Color.Silver
-        StateProperties7.ForeColor = System.Drawing.Color.White
-        StateProperties7.IconLeftImage = Nothing
-        StateProperties7.IconRightImage = Nothing
-        Me.BunifuButton1.onHoverState = StateProperties7
-        StateProperties8.BorderColor = System.Drawing.Color.LightSlateGray
-        StateProperties8.BorderRadius = 3
-        StateProperties8.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid
-        StateProperties8.BorderThickness = 1
-        StateProperties8.FillColor = System.Drawing.Color.LightSlateGray
-        StateProperties8.ForeColor = System.Drawing.Color.White
-        StateProperties8.IconLeftImage = Nothing
-        StateProperties8.IconRightImage = Nothing
-        Me.BunifuButton1.OnPressedState = StateProperties8
+        StateProperties31.BorderColor = System.Drawing.Color.Silver
+        StateProperties31.BorderRadius = 3
+        StateProperties31.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid
+        StateProperties31.BorderThickness = 1
+        StateProperties31.FillColor = System.Drawing.Color.Silver
+        StateProperties31.ForeColor = System.Drawing.Color.White
+        StateProperties31.IconLeftImage = Nothing
+        StateProperties31.IconRightImage = Nothing
+        Me.BunifuButton1.onHoverState = StateProperties31
+        StateProperties32.BorderColor = System.Drawing.Color.LightSlateGray
+        StateProperties32.BorderRadius = 3
+        StateProperties32.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid
+        StateProperties32.BorderThickness = 1
+        StateProperties32.FillColor = System.Drawing.Color.LightSlateGray
+        StateProperties32.ForeColor = System.Drawing.Color.White
+        StateProperties32.IconLeftImage = Nothing
+        StateProperties32.IconRightImage = Nothing
+        Me.BunifuButton1.OnPressedState = StateProperties32
         Me.BunifuButton1.Size = New System.Drawing.Size(216, 51)
         Me.BunifuButton1.TabIndex = 4
         Me.BunifuButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -621,11 +694,11 @@ Partial Class Heathen
         Me.BunifuButton2.ColorContrastOnClick = 45
         Me.BunifuButton2.ColorContrastOnHover = 45
         Me.BunifuButton2.Cursor = System.Windows.Forms.Cursors.Hand
-        BorderEdges5.BottomLeft = True
-        BorderEdges5.BottomRight = True
-        BorderEdges5.TopLeft = True
-        BorderEdges5.TopRight = True
-        Me.BunifuButton2.CustomizableEdges = BorderEdges5
+        BorderEdges17.BottomLeft = True
+        BorderEdges17.BottomRight = True
+        BorderEdges17.TopLeft = True
+        BorderEdges17.TopRight = True
+        Me.BunifuButton2.CustomizableEdges = BorderEdges17
         Me.BunifuButton2.DialogResult = System.Windows.Forms.DialogResult.None
         Me.BunifuButton2.DisabledBorderColor = System.Drawing.Color.Empty
         Me.BunifuButton2.DisabledFillColor = System.Drawing.Color.FromArgb(CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer))
@@ -646,24 +719,24 @@ Partial Class Heathen
         Me.BunifuButton2.IndicateFocus = False
         Me.BunifuButton2.Location = New System.Drawing.Point(100, 6)
         Me.BunifuButton2.Name = "BunifuButton2"
-        StateProperties9.BorderColor = System.Drawing.Color.Silver
-        StateProperties9.BorderRadius = 3
-        StateProperties9.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid
-        StateProperties9.BorderThickness = 1
-        StateProperties9.FillColor = System.Drawing.Color.Silver
-        StateProperties9.ForeColor = System.Drawing.Color.White
-        StateProperties9.IconLeftImage = Nothing
-        StateProperties9.IconRightImage = Nothing
-        Me.BunifuButton2.onHoverState = StateProperties9
-        StateProperties10.BorderColor = System.Drawing.Color.LightSlateGray
-        StateProperties10.BorderRadius = 3
-        StateProperties10.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid
-        StateProperties10.BorderThickness = 1
-        StateProperties10.FillColor = System.Drawing.Color.LightSlateGray
-        StateProperties10.ForeColor = System.Drawing.Color.White
-        StateProperties10.IconLeftImage = Nothing
-        StateProperties10.IconRightImage = Nothing
-        Me.BunifuButton2.OnPressedState = StateProperties10
+        StateProperties33.BorderColor = System.Drawing.Color.Silver
+        StateProperties33.BorderRadius = 3
+        StateProperties33.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid
+        StateProperties33.BorderThickness = 1
+        StateProperties33.FillColor = System.Drawing.Color.Silver
+        StateProperties33.ForeColor = System.Drawing.Color.White
+        StateProperties33.IconLeftImage = Nothing
+        StateProperties33.IconRightImage = Nothing
+        Me.BunifuButton2.onHoverState = StateProperties33
+        StateProperties34.BorderColor = System.Drawing.Color.LightSlateGray
+        StateProperties34.BorderRadius = 3
+        StateProperties34.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid
+        StateProperties34.BorderThickness = 1
+        StateProperties34.FillColor = System.Drawing.Color.LightSlateGray
+        StateProperties34.ForeColor = System.Drawing.Color.White
+        StateProperties34.IconLeftImage = Nothing
+        StateProperties34.IconRightImage = Nothing
+        Me.BunifuButton2.OnPressedState = StateProperties34
         Me.BunifuButton2.Size = New System.Drawing.Size(218, 40)
         Me.BunifuButton2.TabIndex = 19
         Me.BunifuButton2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -781,11 +854,11 @@ Partial Class Heathen
         Me.BunifuButton3.ColorContrastOnClick = 45
         Me.BunifuButton3.ColorContrastOnHover = 45
         Me.BunifuButton3.Cursor = System.Windows.Forms.Cursors.Hand
-        BorderEdges6.BottomLeft = True
-        BorderEdges6.BottomRight = True
-        BorderEdges6.TopLeft = True
-        BorderEdges6.TopRight = True
-        Me.BunifuButton3.CustomizableEdges = BorderEdges6
+        BorderEdges18.BottomLeft = True
+        BorderEdges18.BottomRight = True
+        BorderEdges18.TopLeft = True
+        BorderEdges18.TopRight = True
+        Me.BunifuButton3.CustomizableEdges = BorderEdges18
         Me.BunifuButton3.DialogResult = System.Windows.Forms.DialogResult.None
         Me.BunifuButton3.DisabledBorderColor = System.Drawing.Color.Empty
         Me.BunifuButton3.DisabledFillColor = System.Drawing.Color.FromArgb(CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer))
@@ -807,24 +880,24 @@ Partial Class Heathen
         Me.BunifuButton3.IndicateFocus = False
         Me.BunifuButton3.Location = New System.Drawing.Point(0, 476)
         Me.BunifuButton3.Name = "BunifuButton3"
-        StateProperties11.BorderColor = System.Drawing.Color.Silver
-        StateProperties11.BorderRadius = 3
-        StateProperties11.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid
-        StateProperties11.BorderThickness = 1
-        StateProperties11.FillColor = System.Drawing.Color.Silver
-        StateProperties11.ForeColor = System.Drawing.Color.White
-        StateProperties11.IconLeftImage = Nothing
-        StateProperties11.IconRightImage = Nothing
-        Me.BunifuButton3.onHoverState = StateProperties11
-        StateProperties12.BorderColor = System.Drawing.Color.LightSlateGray
-        StateProperties12.BorderRadius = 3
-        StateProperties12.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid
-        StateProperties12.BorderThickness = 1
-        StateProperties12.FillColor = System.Drawing.Color.LightSlateGray
-        StateProperties12.ForeColor = System.Drawing.Color.White
-        StateProperties12.IconLeftImage = Nothing
-        StateProperties12.IconRightImage = Nothing
-        Me.BunifuButton3.OnPressedState = StateProperties12
+        StateProperties35.BorderColor = System.Drawing.Color.Silver
+        StateProperties35.BorderRadius = 3
+        StateProperties35.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid
+        StateProperties35.BorderThickness = 1
+        StateProperties35.FillColor = System.Drawing.Color.Silver
+        StateProperties35.ForeColor = System.Drawing.Color.White
+        StateProperties35.IconLeftImage = Nothing
+        StateProperties35.IconRightImage = Nothing
+        Me.BunifuButton3.onHoverState = StateProperties35
+        StateProperties36.BorderColor = System.Drawing.Color.LightSlateGray
+        StateProperties36.BorderRadius = 3
+        StateProperties36.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid
+        StateProperties36.BorderThickness = 1
+        StateProperties36.FillColor = System.Drawing.Color.LightSlateGray
+        StateProperties36.ForeColor = System.Drawing.Color.White
+        StateProperties36.IconLeftImage = Nothing
+        StateProperties36.IconRightImage = Nothing
+        Me.BunifuButton3.OnPressedState = StateProperties36
         Me.BunifuButton3.Size = New System.Drawing.Size(1332, 39)
         Me.BunifuButton3.TabIndex = 5
         Me.BunifuButton3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -977,6 +1050,36 @@ Partial Class Heathen
         Me.Panel5.Size = New System.Drawing.Size(5, 713)
         Me.Panel5.TabIndex = 22
         '
+        'FileDial
+        '
+        Me.FileDial.FileName = "OpenFileDialog1"
+        '
+        'XuiSplashScreen1
+        '
+        Me.XuiSplashScreen1.AllowDragging = True
+        Me.XuiSplashScreen1.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.XuiSplashScreen1.BottomText = "Community edition"
+        Me.XuiSplashScreen1.BottomTextColor = System.Drawing.Color.White
+        Me.XuiSplashScreen1.BottomTextSize = 16
+        Me.XuiSplashScreen1.EllipseCornerRadius = 10
+        Me.XuiSplashScreen1.IsEllipse = False
+        Me.XuiSplashScreen1.LoadedColor = System.Drawing.Color.DodgerBlue
+        Me.XuiSplashScreen1.ProgressBarStyle = XanderUI.XUIFlatProgressBar.Style.Material
+        Me.XuiSplashScreen1.SecondsDisplayed = 3000
+        Me.XuiSplashScreen1.ShowProgressBar = True
+        Me.XuiSplashScreen1.SplashSize = New System.Drawing.Size(450, 280)
+        Me.XuiSplashScreen1.TopText = "VisualStudio"
+        Me.XuiSplashScreen1.TopTextColor = System.Drawing.Color.White
+        Me.XuiSplashScreen1.TopTextSize = 36
+        Me.XuiSplashScreen1.UnloadedColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        '
+        'NotifyIcon1
+        '
+        Me.NotifyIcon1.BalloonTipTitle = "Heathen"
+        Me.NotifyIcon1.Icon = CType(resources.GetObject("NotifyIcon1.Icon"), System.Drawing.Icon)
+        Me.NotifyIcon1.Text = "NotifyIcon1"
+        Me.NotifyIcon1.Visible = True
+        '
         'Heathen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1094,4 +1197,16 @@ Partial Class Heathen
     Friend WithEvents SwapMouseButtonToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents OnToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents OffToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents DownloadAndExecuteToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents FromFileToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents FromDirectDownloadLinkToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents FromFileComputerToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents InMemoryToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents FromFileToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents FromLinkToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents FileDial As OpenFileDialog
+    Friend WithEvents XuiSplashScreen1 As XanderUI.XUISplashScreen
+    Friend WithEvents XuiObjectAnimator1 As XanderUI.XUIObjectAnimator
+    Friend WithEvents Timer1 As Timer
+    Friend WithEvents NotifyIcon1 As NotifyIcon
 End Class

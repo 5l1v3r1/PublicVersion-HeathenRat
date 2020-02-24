@@ -48,7 +48,7 @@ LAST UPDATE FROM  19-02-2020 21:32 :
 * -Clear Ram after using plugin 
 
 ```Visual Basic 
-    ''Come from : https://www.youtube.com/watch?v=-fPY7ecWPUA
+    ''Comes from : https://www.youtube.com/watch?v=-fPY7ecWPUA
     ''Reset Cache Memory
     Declare Function SetProcessWorkingSetSize Lib "kernel32.dll" (ByVal process As IntPtr, ByVal minimumWorkingSetSize As Integer, ByVal maximumWorkingSetSize As Integer) As Integer
     Public Sub FlushMemory()

